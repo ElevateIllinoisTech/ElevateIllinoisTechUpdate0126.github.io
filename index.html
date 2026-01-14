@@ -1451,6 +1451,7 @@
                 <div class="nav-dropdown">
                     <button class="nav-dropdown-btn">Data</button>
                     <div class="nav-dropdown-content">
+                        <button class="nav-dropdown-item" data-section="visualizations">Visualizations</button>
                         <button class="nav-dropdown-item" data-section="metrics">Metrics</button>
                         <button class="nav-dropdown-item" data-section="terms">Terms</button>
                         <button class="nav-dropdown-item" data-section="references">References</button>
@@ -1474,16 +1475,17 @@
                     <div class="stat-number">75</div>
                     <div class="stat-label">Total Badges</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" style="border: 2px solid var(--iit-scarlet); background: linear-gradient(135deg, #fff 0%, #fef2f2 100%);">
                     <div class="stat-number">48</div>
                     <div class="stat-label">In Campus Groups</div>
+                    <div style="font-size: 0.7rem; color: var(--iit-gray-dark); margin-top: 4px;">Active & Trackable</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">715</div>
-                    <div class="stat-label">Badge Awards</div>
+                    <div class="stat-label">Badges Awarded</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">44</div>
+                    <div class="stat-number">45</div>
                     <div class="stat-label">Activities</div>
                 </div>
                 <div class="stat-card">
@@ -2531,11 +2533,11 @@
             <div class="stats-grid" style="margin-bottom: var(--spacing-xl);">
                 <div class="stat-card">
                     <div class="stat-number">2</div>
-                    <div class="stat-label">Tracks</div>
+                    <div class="stat-label">Primary Checklists</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">7</div>
-                    <div class="stat-label">Checklists</div>
+                    <div class="stat-number">396</div>
+                    <div class="stat-label">Students Enrolled</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">45</div>
@@ -2550,27 +2552,27 @@
             <!-- Track Overview -->
             <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm); margin-bottom: var(--spacing-xl);">
                 <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.3rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 5px; height: 1.3rem; background: var(--iit-scarlet); border-radius: 3px;"></span>How Tracks & Checklists Work</h3>
-                <p style="color: var(--iit-gray-dark); margin-bottom: var(--spacing-lg);">The Elevate program organizes activities into <strong>Tracks</strong> (year-based pathways) containing multiple <strong>Checklists</strong> (grouped activities). Each checklist has required and elective items students complete to earn badges and progress through the program.</p>
+                <p style="color: var(--iit-gray-dark); margin-bottom: var(--spacing-lg);">The Elevate program organizes activities into <strong>Tracks</strong> (year-based pathways). Each track has a <strong>Primary Checklist</strong> with required and elective activities, plus <strong>Self-Support Checklists</strong> for orientation, resources, and optional development.</p>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg);">
                     <div style="background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius: 10px; padding: var(--spacing-lg); border-left: 4px solid #4CAF50;">
                         <h4 style="color: #2E7D32; margin-bottom: var(--spacing-sm); font-size: 1.1rem;">📗 Year 1: Exposure</h4>
                         <p style="font-size: 0.9rem; color: var(--iit-gray-dark); margin-bottom: var(--spacing-sm);">First-Year Professional Development</p>
                         <ul style="font-size: 0.85rem; color: var(--iit-gray-dark); margin-left: var(--spacing-md);">
-                            <li>5 Checklists total</li>
-                            <li>23 Activities (6 Required + 17 Elective)</li>
-                            <li>14 Orientation/Support items</li>
-                            <li><strong>Complete: All required + 2 electives</strong></li>
+                            <li><strong>1 Primary Checklist</strong> (23 activities)</li>
+                            <li>6 Required + 17 Elective options</li>
+                            <li>+ Self-support checklists for resources</li>
+                            <li><strong>276 students enrolled</strong></li>
                         </ul>
                     </div>
                     <div style="background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-radius: 10px; padding: var(--spacing-lg); border-left: 4px solid #FF9800;">
                         <h4 style="color: #E65100; margin-bottom: var(--spacing-sm); font-size: 1.1rem;">📙 Year 2: Engagement</h4>
                         <p style="font-size: 0.9rem; color: var(--iit-gray-dark); margin-bottom: var(--spacing-sm);">Sophomore Professional Development</p>
                         <ul style="font-size: 0.85rem; color: var(--iit-gray-dark); margin-left: var(--spacing-md);">
-                            <li>2 Checklists total</li>
-                            <li>22 Activities (7 Required + 15 Elective)</li>
-                            <li>14 Orientation/Support items</li>
-                            <li><strong>Complete: All required + 2 electives</strong></li>
+                            <li><strong>1 Primary Checklist</strong> (22 activities)</li>
+                            <li>7 Required + 15 Elective options</li>
+                            <li>+ Self-support checklists for resources</li>
+                            <li><strong>120 students enrolled</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -2582,7 +2584,7 @@
                 <p style="color: var(--iit-gray-dark); margin-bottom: var(--spacing-lg);">Core professional development activities designed to build foundations for career success during your first year at Illinois Tech.</p>
                 
                 <div style="background: #E8F5E9; border-radius: 8px; padding: var(--spacing-md); margin-bottom: var(--spacing-lg);">
-                    <p style="font-size: 0.9rem; margin: 0;"><strong>📋 5 Checklists</strong> | Assigned to: Group members (619) | Deadline: May 15, 2026</p>
+                    <p style="font-size: 0.9rem; margin: 0;"><strong>📋 1 Primary Checklist + 3 Self-Support Checklists</strong> | Assigned to: <strong>276 students</strong> | Deadline: May 15, 2026</p>
                 </div>
 
                 <!-- Year 1 Checklists List -->
@@ -2590,7 +2592,7 @@
                     <div style="background: var(--iit-gray-light); border-radius: 8px; padding: var(--spacing-md); border-left: 3px solid #4CAF50;">
                         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-sm);">
                             <div>
-                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">✅ Elevate Your First-Year with Exposure (Checklist)</h4>
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">✅ Elevate Your First-Year with Exposure <span style="background: #4CAF50; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px;">PRIMARY</span></h4>
                                 <p style="font-size: 0.85rem; color: var(--iit-gray-dark); margin: var(--spacing-xs) 0 0;"><strong style="color: var(--iit-scarlet);">6 Required</strong> activities + <strong style="color: #2E7D32;">17 Elective</strong> options. Students must complete all required activities plus at least 2 electives.</p>
                             </div>
                             <span style="background: #4CAF50; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">23 Items</span>
@@ -2599,7 +2601,7 @@
                     <div style="background: var(--iit-gray-light); border-radius: 8px; padding: var(--spacing-md); border-left: 3px solid #81C784;">
                         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-sm);">
                             <div>
-                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">📚 Getting Started with Elevate (Orientation Checklist)</h4>
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">📚 Getting Started with Elevate <span style="background: #757575; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px;">SELF-SUPPORT</span></h4>
                                 <p style="font-size: 0.85rem; color: var(--iit-gray-dark); margin: var(--spacing-xs) 0 0;">Resource hub, social connections, program overview, and core skill foundations.</p>
                             </div>
                             <span style="background: #81C784; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">14 Items</span>
@@ -2608,7 +2610,7 @@
                     <div style="background: var(--iit-gray-light); border-radius: 8px; padding: var(--spacing-md); border-left: 3px solid #A5D6A7;">
                         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-sm);">
                             <div>
-                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">💰 Elevate Your Financial Literacy and Planning (Resources)</h4>
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">💰 Financial Literacy and Planning <span style="background: #757575; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px;">SELF-SUPPORT</span></h4>
                                 <p style="font-size: 0.85rem; color: var(--iit-gray-dark); margin: var(--spacing-xs) 0 0;">Financial literacy and career planning resources.</p>
                             </div>
                             <span style="background: #A5D6A7; color: #1B5E20; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">1 Item</span>
@@ -2617,7 +2619,7 @@
                     <div style="background: var(--iit-gray-light); border-radius: 8px; padding: var(--spacing-md); border-left: 3px solid #C8E6C9;">
                         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-sm);">
                             <div>
-                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">💼 Co-op & Internship Prep Course (ELECTIVE)</h4>
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">💼 Co-op & Internship Prep Course <span style="background: #757575; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px;">SELF-SUPPORT</span></h4>
                                 <p style="font-size: 0.85rem; color: var(--iit-gray-dark); margin: var(--spacing-xs) 0 0;">Get ready to land your dream position.</p>
                             </div>
                             <span style="background: #C8E6C9; color: #1B5E20; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">1 Item</span>
@@ -2855,14 +2857,14 @@
                 <p style="color: var(--iit-gray-dark); margin-bottom: var(--spacing-lg);">Advanced professional development activities focused on internship preparation and building tangible work products.</p>
                 
                 <div style="background: #FFF3E0; border-radius: 8px; padding: var(--spacing-md); margin-bottom: var(--spacing-lg);">
-                    <p style="font-size: 0.9rem; margin: 0;"><strong>📋 2 Checklists</strong> | 22 Main Activities + 14 Orientation Items | Focus: Internship Readiness</p>
+                    <p style="font-size: 0.9rem; margin: 0;"><strong>📋 1 Primary Checklist + 1 Self-Support Checklist</strong> | Assigned to: <strong>120 students</strong> | Deadline: May 15, 2026</p>
                 </div>
 
                 <div style="display: grid; gap: var(--spacing-md);">
                     <div style="background: var(--iit-gray-light); border-radius: 8px; padding: var(--spacing-md); border-left: 3px solid #FF9800;">
                         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-sm);">
                             <div>
-                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">✅ Elevate Year Two with Engagement (Checklist)</h4>
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">✅ Elevate Year Two with Engagement <span style="background: #FF9800; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px;">PRIMARY</span></h4>
                                 <p style="font-size: 0.85rem; color: var(--iit-gray-dark); margin: var(--spacing-xs) 0 0;"><strong style="color: var(--iit-scarlet);">7 Required</strong> activities + <strong style="color: #E65100;">15 Elective</strong> options. Students must complete all required activities plus at least 2 electives.</p>
                             </div>
                             <span style="background: #FF9800; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">22 Items</span>
@@ -2871,7 +2873,7 @@
                     <div style="background: var(--iit-gray-light); border-radius: 8px; padding: var(--spacing-md); border-left: 3px solid #FFB74D;">
                         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-sm);">
                             <div>
-                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">📚 Getting Started with Elevate Year Two (Orientation)</h4>
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">📚 Getting Started with Elevate Year Two <span style="background: #757575; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px;">SELF-SUPPORT</span></h4>
                                 <p style="font-size: 0.85rem; color: var(--iit-gray-dark); margin: var(--spacing-xs) 0 0;">Campus resources, program overview, core skills refresher, and support contacts.</p>
                             </div>
                             <span style="background: #FFB74D; color: #E65100; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">14 Items</span>
@@ -3293,6 +3295,418 @@
                     <p style="margin-top: var(--spacing-md); font-size: 0.9rem; color: var(--iit-gray-dark);">
                         <strong>Key Activities:</strong> Undergraduate Research, Publications, Grant Writing, Science Communication, Public Engagement
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualizations Section -->
+        <section id="visualizations" class="section" aria-labelledby="visualizations-heading">
+            <div class="section-header">
+                <h2 id="visualizations-heading">Program Visualizations</h2>
+                <p>Interactive data visualizations across all Elevate program metrics | January 2026</p>
+            </div>
+
+            <!-- Key Metrics Summary -->
+            <div class="stats-grid" style="margin-bottom: var(--spacing-xl);">
+                <div class="stat-card">
+                    <div class="stat-number">396</div>
+                    <div class="stat-label">Total Enrolled</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">715</div>
+                    <div class="stat-label">Badges Awarded</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">48</div>
+                    <div class="stat-label">Badge Types</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">School Pilots</div>
+                </div>
+            </div>
+
+            <!-- Row 1: Enrollment & Badge Distribution -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+                
+                <!-- Enrollment by Year -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>Enrollment by Year</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 600; color: #2E7D32;">Year 1 (Exposure)</span>
+                                <span style="font-weight: 700; color: #2E7D32;">276 students (70%)</span>
+                            </div>
+                            <div style="height: 32px; background: #E8F5E9; border-radius: 8px; overflow: hidden;">
+                                <div style="width: 70%; height: 100%; background: linear-gradient(90deg, #4CAF50, #2E7D32); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 600; color: #E65100;">Year 2 (Engagement)</span>
+                                <span style="font-weight: 700; color: #E65100;">120 students (30%)</span>
+                            </div>
+                            <div style="height: 32px; background: #FFF3E0; border-radius: 8px; overflow: hidden;">
+                                <div style="width: 30%; height: 100%; background: linear-gradient(90deg, #FF9800, #E65100); border-radius: 8px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-lg); padding-top: var(--spacing-md); border-top: 1px solid var(--iit-gray-medium); display: flex; justify-content: space-between;">
+                        <span style="color: var(--iit-gray-dark);">Total Program Enrollment</span>
+                        <span style="font-weight: 700; color: var(--iit-scarlet); font-size: 1.2rem;">396</span>
+                    </div>
+                </div>
+
+                <!-- Top Badges Earned -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>Top 5 Badges Earned</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                            <span style="width: 24px; font-weight: bold; color: var(--iit-scarlet);">1</span>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
+                                    <span style="font-size: 0.9rem;">Initiative Taker (Go Getter!)</span>
+                                    <span style="font-weight: 700;">93</span>
+                                </div>
+                                <div style="height: 8px; background: var(--iit-gray-light); border-radius: 4px;">
+                                    <div style="width: 100%; height: 100%; background: var(--iit-scarlet); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                            <span style="width: 24px; font-weight: bold; color: #E65100;">2</span>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
+                                    <span style="font-size: 0.9rem;">Career Critical Thinker Foundational</span>
+                                    <span style="font-weight: 700;">86</span>
+                                </div>
+                                <div style="height: 8px; background: var(--iit-gray-light); border-radius: 4px;">
+                                    <div style="width: 92%; height: 100%; background: #E65100; border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                            <span style="width: 24px; font-weight: bold; color: #1976D2;">3</span>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
+                                    <span style="font-size: 0.9rem;">Digital Literacy Champion Foundation</span>
+                                    <span style="font-weight: 700;">86</span>
+                                </div>
+                                <div style="height: 8px; background: var(--iit-gray-light); border-radius: 4px;">
+                                    <div style="width: 92%; height: 100%; background: #1976D2; border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                            <span style="width: 24px; font-weight: bold; color: #7B1FA2;">4</span>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
+                                    <span style="font-size: 0.9rem;">Leadership Foundational</span>
+                                    <span style="font-weight: 700;">85</span>
+                                </div>
+                                <div style="height: 8px; background: var(--iit-gray-light); border-radius: 4px;">
+                                    <div style="width: 91%; height: 100%; background: #7B1FA2; border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                            <span style="width: 24px; font-weight: bold; color: #2E7D32;">5</span>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
+                                    <span style="font-size: 0.9rem;">Self-Awareness Developer</span>
+                                    <span style="font-weight: 700;">85</span>
+                                </div>
+                                <div style="height: 8px; background: var(--iit-gray-light); border-radius: 4px;">
+                                    <div style="width: 91%; height: 100%; background: #2E7D32; border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Framework Alignment & Badge Categories -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+                
+                <!-- Framework Alignment -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>Career Readiness Framework Alignment</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500;">P21 Framework</span>
+                                <span style="font-weight: 700; color: #2E7D32;">95%</span>
+                            </div>
+                            <div style="height: 20px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 95%; height: 100%; background: linear-gradient(90deg, #4CAF50, #2E7D32); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500;">NACE Competencies</span>
+                                <span style="font-weight: 700; color: #1976D2;">92%</span>
+                            </div>
+                            <div style="height: 20px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 92%; height: 100%; background: linear-gradient(90deg, #2196F3, #1976D2); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500;">WEF Future Skills 2030</span>
+                                <span style="font-weight: 700; color: #7B1FA2;">88%</span>
+                            </div>
+                            <div style="height: 20px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 88%; height: 100%; background: linear-gradient(90deg, #9C27B0, #7B1FA2); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500;">CASEL SEL Framework</span>
+                                <span style="font-weight: 700; color: #E65100;">78%</span>
+                            </div>
+                            <div style="height: 20px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #FF9800, #E65100); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badge Distribution by Skill Track -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>Badges by Core Skill Track</h3>
+                    
+                    <!-- Donut Chart Visualization -->
+                    <div style="display: flex; align-items: center; gap: var(--spacing-xl);">
+                        <svg viewBox="0 0 200 200" style="width: 160px; height: 160px;">
+                            <!-- Critical Thinking - 22% -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#1976D2" stroke-width="30" stroke-dasharray="110.5 391.5" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
+                            <!-- Leadership - 19% -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#7B1FA2" stroke-width="30" stroke-dasharray="95.5 406.5" stroke-dashoffset="-110.5" transform="rotate(-90 100 100)"/>
+                            <!-- Digital Literacy - 20% -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#2E7D32" stroke-width="30" stroke-dasharray="100.5 401.5" stroke-dashoffset="-206" transform="rotate(-90 100 100)"/>
+                            <!-- Communication - 16% -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#E65100" stroke-width="30" stroke-dasharray="80.4 421.6" stroke-dashoffset="-306.5" transform="rotate(-90 100 100)"/>
+                            <!-- Collaboration - 13% -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#00838F" stroke-width="30" stroke-dasharray="65.3 436.7" stroke-dashoffset="-386.9" transform="rotate(-90 100 100)"/>
+                            <!-- Other - 10% -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#757575" stroke-width="30" stroke-dasharray="50.2 451.8" stroke-dashoffset="-452.2" transform="rotate(-90 100 100)"/>
+                            <!-- Center -->
+                            <circle cx="100" cy="100" r="55" fill="white"/>
+                            <text x="100" y="95" text-anchor="middle" font-size="24" font-weight="bold" fill="var(--iit-scarlet)">48</text>
+                            <text x="100" y="115" text-anchor="middle" font-size="12" fill="var(--iit-gray-dark)">Badges</text>
+                        </svg>
+                        
+                        <div style="display: flex; flex-direction: column; gap: var(--spacing-sm); font-size: 0.85rem;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="width: 12px; height: 12px; background: #1976D2; border-radius: 2px;"></span>
+                                <span>Critical Thinking (22%)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="width: 12px; height: 12px; background: #2E7D32; border-radius: 2px;"></span>
+                                <span>Digital Literacy (20%)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="width: 12px; height: 12px; background: #7B1FA2; border-radius: 2px;"></span>
+                                <span>Leadership (19%)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="width: 12px; height: 12px; background: #E65100; border-radius: 2px;"></span>
+                                <span>Communication (16%)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="width: 12px; height: 12px; background: #00838F; border-radius: 2px;"></span>
+                                <span>Collaboration (13%)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="width: 12px; height: 12px; background: #757575; border-radius: 2px;"></span>
+                                <span>Other Skills (10%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: School Pilots & Badge Tier Distribution -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+                
+                <!-- School Pilots Progress -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>School Pilot Progress</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                        <div style="padding: var(--spacing-md); background: var(--iit-gray-light); border-radius: 8px; border-left: 4px solid #1976D2;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">Computing</span>
+                                <span style="background: #1976D2; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.8rem;">Active</span>
+                            </div>
+                            <div style="display: flex; gap: var(--spacing-lg); margin-top: var(--spacing-sm); font-size: 0.85rem; color: var(--iit-gray-dark);">
+                                <span>AWS Courses: 5</span>
+                                <span>Faculty: 2</span>
+                            </div>
+                        </div>
+                        <div style="padding: var(--spacing-md); background: var(--iit-gray-light); border-radius: 8px; border-left: 4px solid #2E7D32;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">Armour Engineering</span>
+                                <span style="background: #2E7D32; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.8rem;">Active</span>
+                            </div>
+                            <div style="display: flex; gap: var(--spacing-lg); margin-top: var(--spacing-sm); font-size: 0.85rem; color: var(--iit-gray-dark);">
+                                <span>AWS Courses: 3</span>
+                                <span>Faculty: 1</span>
+                            </div>
+                        </div>
+                        <div style="padding: var(--spacing-md); background: var(--iit-gray-light); border-radius: 8px; border-left: 4px solid #7B1FA2;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">Stuart Business</span>
+                                <span style="background: #7B1FA2; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.8rem;">Active</span>
+                            </div>
+                            <div style="display: flex; gap: var(--spacing-lg); margin-top: var(--spacing-sm); font-size: 0.85rem; color: var(--iit-gray-dark);">
+                                <span>AWS Courses: 2</span>
+                                <span>Faculty: 1</span>
+                            </div>
+                        </div>
+                        <div style="padding: var(--spacing-md); background: var(--iit-gray-light); border-radius: 8px; border-left: 4px solid #E65100;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">Lewis Psychology</span>
+                                <span style="background: #E65100; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.8rem;">Pilot</span>
+                            </div>
+                            <div style="display: flex; gap: var(--spacing-lg); margin-top: var(--spacing-sm); font-size: 0.85rem; color: var(--iit-gray-dark);">
+                                <span>AWS Courses: 1</span>
+                                <span>Faculty: 1</span>
+                            </div>
+                        </div>
+                        <div style="padding: var(--spacing-md); background: var(--iit-gray-light); border-radius: 8px; border-left: 4px solid #00838F;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">Applied Sciences</span>
+                                <span style="background: #00838F; color: white; padding: 2px 10px; border-radius: 12px; font-size: 0.8rem;">Planning</span>
+                            </div>
+                            <div style="display: flex; gap: var(--spacing-lg); margin-top: var(--spacing-sm); font-size: 0.85rem; color: var(--iit-gray-dark);">
+                                <span>AWS Courses: TBD</span>
+                                <span>Faculty: Recruiting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badge Tier Distribution -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>Badge Tier Distribution</h3>
+                    
+                    <!-- Pyramid visualization -->
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                        <div style="width: 60px; height: 50px; background: linear-gradient(180deg, #FFD700, #FFC107); clip-path: polygon(50% 0%, 100% 100%, 0% 100%); display: flex; align-items: center; justify-content: center;">
+                        </div>
+                        <div style="text-align: center; margin-bottom: var(--spacing-sm);">
+                            <span style="font-weight: 700; color: #FFC107;">Level 5: Elevator</span>
+                            <span style="display: block; font-size: 0.85rem; color: var(--iit-gray-dark);">4 badges earned</span>
+                        </div>
+                        
+                        <div style="width: 120px; height: 40px; background: linear-gradient(180deg, #9C27B0, #7B1FA2); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
+                            Level 4
+                        </div>
+                        <div style="text-align: center; margin-bottom: var(--spacing-sm);">
+                            <span style="font-weight: 600; color: #7B1FA2;">7 badges earned</span>
+                        </div>
+                        
+                        <div style="width: 180px; height: 40px; background: linear-gradient(180deg, #1976D2, #1565C0); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
+                            Level 3
+                        </div>
+                        <div style="text-align: center; margin-bottom: var(--spacing-sm);">
+                            <span style="font-weight: 600; color: #1976D2;">56 badges earned</span>
+                        </div>
+                        
+                        <div style="width: 240px; height: 40px; background: linear-gradient(180deg, #2E7D32, #1B5E20); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
+                            Level 2
+                        </div>
+                        <div style="text-align: center; margin-bottom: var(--spacing-sm);">
+                            <span style="font-weight: 600; color: #2E7D32;">40 badges earned</span>
+                        </div>
+                        
+                        <div style="width: 300px; height: 40px; background: linear-gradient(180deg, #B71C1C, #8B0000); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
+                            Level 1: Foundational
+                        </div>
+                        <div style="text-align: center;">
+                            <span style="font-weight: 600; color: var(--iit-scarlet);">608 badges earned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4: Activity Completion & Badge Growth -->
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--spacing-xl);">
+                
+                <!-- Badge Awards Summary Table -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>Badge Awards by Category (48 Total Badge Types)</h3>
+                    
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: var(--iit-black); color: white;">
+                                    <th style="padding: 12px; text-align: left;">Category</th>
+                                    <th style="padding: 12px; text-align: center;">Badge Types</th>
+                                    <th style="padding: 12px; text-align: center;">Total Awarded</th>
+                                    <th style="padding: 12px; text-align: center;">% of Total</th>
+                                    <th style="padding: 12px; text-align: left;">Top Badge</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--iit-gray-medium);">
+                                    <td style="padding: 12px; font-weight: 600;">🧠 Critical Thinking</td>
+                                    <td style="padding: 12px; text-align: center;">7</td>
+                                    <td style="padding: 12px; text-align: center; font-weight: 700; color: #1976D2;">166</td>
+                                    <td style="padding: 12px; text-align: center;">23%</td>
+                                    <td style="padding: 12px;">Foundational (86)</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--iit-gray-medium); background: var(--iit-gray-light);">
+                                    <td style="padding: 12px; font-weight: 600;">💻 Digital Literacy</td>
+                                    <td style="padding: 12px; text-align: center;">5</td>
+                                    <td style="padding: 12px; text-align: center; font-weight: 700; color: #2E7D32;">101</td>
+                                    <td style="padding: 12px; text-align: center;">14%</td>
+                                    <td style="padding: 12px;">Foundation (86)</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--iit-gray-medium);">
+                                    <td style="padding: 12px; font-weight: 600;">👑 Leadership</td>
+                                    <td style="padding: 12px; text-align: center;">6</td>
+                                    <td style="padding: 12px; text-align: center; font-weight: 700; color: #7B1FA2;">111</td>
+                                    <td style="padding: 12px; text-align: center;">16%</td>
+                                    <td style="padding: 12px;">Foundational (85)</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--iit-gray-medium); background: var(--iit-gray-light);">
+                                    <td style="padding: 12px; font-weight: 600;">💬 Communication</td>
+                                    <td style="padding: 12px; text-align: center;">5</td>
+                                    <td style="padding: 12px; text-align: center; font-weight: 700; color: #E65100;">96</td>
+                                    <td style="padding: 12px; text-align: center;">13%</td>
+                                    <td style="padding: 12px;">Advanced (56)</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--iit-gray-medium);">
+                                    <td style="padding: 12px; font-weight: 600;">🤝 Collaboration</td>
+                                    <td style="padding: 12px; text-align: center;">5</td>
+                                    <td style="padding: 12px; text-align: center; font-weight: 700; color: #00838F;">6</td>
+                                    <td style="padding: 12px; text-align: center;">1%</td>
+                                    <td style="padding: 12px;">Foundational (3)</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--iit-gray-medium); background: var(--iit-gray-light);">
+                                    <td style="padding: 12px; font-weight: 600;">🎯 Behavioral/Meta</td>
+                                    <td style="padding: 12px; text-align: center;">20</td>
+                                    <td style="padding: 12px; text-align: center; font-weight: 700; color: var(--iit-scarlet);">235</td>
+                                    <td style="padding: 12px; text-align: center;">33%</td>
+                                    <td style="padding: 12px;">Initiative Taker (93)</td>
+                                </tr>
+                                <tr style="background: var(--iit-black); color: white; font-weight: 700;">
+                                    <td style="padding: 12px;">TOTAL</td>
+                                    <td style="padding: 12px; text-align: center;">48</td>
+                                    <td style="padding: 12px; text-align: center;">715</td>
+                                    <td style="padding: 12px; text-align: center;">100%</td>
+                                    <td style="padding: 12px;">—</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
