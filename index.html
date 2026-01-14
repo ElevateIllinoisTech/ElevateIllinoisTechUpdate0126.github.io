@@ -182,6 +182,86 @@
             outline-offset: 2px;
         }
 
+        /* Dropdown Navigation */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--iit-white);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: var(--font-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-dropdown-btn:hover, .nav-dropdown-btn.active {
+            background: var(--iit-scarlet);
+            border-color: var(--iit-scarlet);
+        }
+
+        .nav-dropdown-btn::after {
+            content: '▼';
+            font-size: 0.6rem;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-dropdown.open .nav-dropdown-btn::after {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--iit-black);
+            min-width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            z-index: 1000;
+            margin-top: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-dropdown.open .nav-dropdown-content {
+            display: block;
+        }
+
+        .nav-dropdown-item {
+            display: block;
+            width: 100%;
+            padding: 12px 16px;
+            background: transparent;
+            border: none;
+            color: var(--iit-white);
+            text-align: left;
+            cursor: pointer;
+            font-family: var(--font-primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+
+        .nav-dropdown-item:hover {
+            background: var(--iit-scarlet);
+        }
+
+        .nav-dropdown-item.active {
+            background: var(--iit-scarlet);
+            font-weight: 600;
+        }
+
         /* Mobile Menu Toggle */
         .mobile-menu-toggle {
             display: none;
@@ -1347,17 +1427,35 @@
             </button>
 
             <nav class="main-nav" role="navigation" aria-label="Main navigation">
-                <button class="nav-btn active" data-section="dashboard" aria-current="page">Dashboard</button>
-                <button class="nav-btn" data-section="frameworks">Frameworks</button>
-                <button class="nav-btn" data-section="foundational">Foundational</button>
-                <button class="nav-btn" data-section="milestone">Milestone</button>
-                <button class="nav-btn" data-section="crosswalk">Crosswalk</button>
-                <button class="nav-btn" data-section="skills">Skills</button>
-                <button class="nav-btn" data-section="activities">Activities</button>
-                <button class="nav-btn" data-section="pilots">School Pilots</button>
-                <button class="nav-btn" data-section="metrics">Metrics</button>
-                <button class="nav-btn" data-section="terms">Terms</button>
-                <button class="nav-btn" data-section="references">References</button>
+                <button class="nav-btn active" data-section="dashboard" aria-current="page">Overview</button>
+                
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-btn">Badge System</button>
+                    <div class="nav-dropdown-content">
+                        <button class="nav-dropdown-item" data-section="frameworks">Frameworks</button>
+                        <button class="nav-dropdown-item" data-section="foundational">Foundational</button>
+                        <button class="nav-dropdown-item" data-section="milestone">Milestone</button>
+                        <button class="nav-dropdown-item" data-section="crosswalk">Crosswalk</button>
+                        <button class="nav-dropdown-item" data-section="skills">Skills</button>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-btn">Program</button>
+                    <div class="nav-dropdown-content">
+                        <button class="nav-dropdown-item" data-section="activities">Activities</button>
+                        <button class="nav-dropdown-item" data-section="pilots">School Pilots</button>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-btn">Data</button>
+                    <div class="nav-dropdown-content">
+                        <button class="nav-dropdown-item" data-section="metrics">Metrics</button>
+                        <button class="nav-dropdown-item" data-section="terms">Terms</button>
+                        <button class="nav-dropdown-item" data-section="references">References</button>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -2432,15 +2530,15 @@
 
             <div class="stats-grid" style="margin-bottom: var(--spacing-xl);">
                 <div class="stat-card">
-                    <div class="stat-number">3</div>
+                    <div class="stat-number">2</div>
                     <div class="stat-label">Tracks</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Checklists (Y1)</div>
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Checklists</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">59</div>
+                    <div class="stat-number">45</div>
                     <div class="stat-label">Total Activities</div>
                 </div>
                 <div class="stat-card">
@@ -2454,35 +2552,25 @@
                 <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.3rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 5px; height: 1.3rem; background: var(--iit-scarlet); border-radius: 3px;"></span>How Tracks & Checklists Work</h3>
                 <p style="color: var(--iit-gray-dark); margin-bottom: var(--spacing-lg);">The Elevate program organizes activities into <strong>Tracks</strong> (year-based pathways) containing multiple <strong>Checklists</strong> (grouped activities). Each checklist has required and elective items students complete to earn badges and progress through the program.</p>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg);">
                     <div style="background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius: 10px; padding: var(--spacing-lg); border-left: 4px solid #4CAF50;">
                         <h4 style="color: #2E7D32; margin-bottom: var(--spacing-sm); font-size: 1.1rem;">📗 Year 1: Exposure</h4>
                         <p style="font-size: 0.9rem; color: var(--iit-gray-dark); margin-bottom: var(--spacing-sm);">First-Year Professional Development</p>
                         <ul style="font-size: 0.85rem; color: var(--iit-gray-dark); margin-left: var(--spacing-md);">
-                            <li>5 Checklists</li>
-                            <li>23 Activities in main checklist</li>
-                            <li>14 Orientation items</li>
-                            <li>Focus: Foundation building</li>
+                            <li>5 Checklists total</li>
+                            <li>23 Activities (6 Required + 17 Elective)</li>
+                            <li>14 Orientation/Support items</li>
+                            <li><strong>Complete: All required + 2 electives</strong></li>
                         </ul>
                     </div>
                     <div style="background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-radius: 10px; padding: var(--spacing-lg); border-left: 4px solid #FF9800;">
                         <h4 style="color: #E65100; margin-bottom: var(--spacing-sm); font-size: 1.1rem;">📙 Year 2: Engagement</h4>
                         <p style="font-size: 0.9rem; color: var(--iit-gray-dark); margin-bottom: var(--spacing-sm);">Sophomore Professional Development</p>
                         <ul style="font-size: 0.85rem; color: var(--iit-gray-dark); margin-left: var(--spacing-md);">
-                            <li>2 Checklists</li>
-                            <li>22 Activities in main checklist</li>
-                            <li>14 Orientation items</li>
-                            <li>Focus: Internship readiness</li>
-                        </ul>
-                    </div>
-                    <div style="background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%); border-radius: 10px; padding: var(--spacing-lg); border-left: 4px solid #9C27B0;">
-                        <h4 style="color: #7B1FA2; margin-bottom: var(--spacing-sm); font-size: 1.1rem;">📕 Year 3-4: Accountability</h4>
-                        <p style="font-size: 0.9rem; color: var(--iit-gray-dark); margin-bottom: var(--spacing-sm);">Advanced Career Development</p>
-                        <ul style="font-size: 0.85rem; color: var(--iit-gray-dark); margin-left: var(--spacing-md);">
-                            <li>40+ hour experiences</li>
-                            <li>Internship/Co-op completion</li>
-                            <li>Job search documentation</li>
-                            <li>Focus: Employment outcomes</li>
+                            <li>2 Checklists total</li>
+                            <li>22 Activities (7 Required + 15 Elective)</li>
+                            <li>14 Orientation/Support items</li>
+                            <li><strong>Complete: All required + 2 electives</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -2503,7 +2591,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-sm);">
                             <div>
                                 <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">✅ Elevate Your First-Year with Exposure (Checklist)</h4>
-                                <p style="font-size: 0.85rem; color: var(--iit-gray-dark); margin: var(--spacing-xs) 0 0;">Required and recommended activities to establish your professional identity and begin career exploration.</p>
+                                <p style="font-size: 0.85rem; color: var(--iit-gray-dark); margin: var(--spacing-xs) 0 0;"><strong style="color: var(--iit-scarlet);">6 Required</strong> activities + <strong style="color: #2E7D32;">17 Elective</strong> options. Students must complete all required activities plus at least 2 electives.</p>
                             </div>
                             <span style="background: #4CAF50; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">23 Items</span>
                         </div>
@@ -2775,7 +2863,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--spacing-sm);">
                             <div>
                                 <h4 style="margin: 0; font-size: 1rem; color: var(--iit-black);">✅ Elevate Year Two with Engagement (Checklist)</h4>
-                                <p style="font-size: 0.85rem; color: var(--iit-gray-dark); margin: var(--spacing-xs) 0 0;">Required and elective activities to build your professional portfolio and prepare for internships.</p>
+                                <p style="font-size: 0.85rem; color: var(--iit-gray-dark); margin: var(--spacing-xs) 0 0;"><strong style="color: var(--iit-scarlet);">7 Required</strong> activities + <strong style="color: #E65100;">15 Elective</strong> options. Students must complete all required activities plus at least 2 electives.</p>
                             </div>
                             <span style="background: #FF9800; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">22 Items</span>
                         </div>
@@ -3812,15 +3900,15 @@
                 
                 <div style="font-size: 0.95rem; line-height: 1.8; color: var(--iit-gray-dark);">
                     <p style="margin-bottom: var(--spacing-lg); padding-left: 2rem; text-indent: -2rem;">
-                        Illinois Institute of Technology. (2024). <em>Career Services & Experiential Learning</em>. Illinois Tech. <a href="https://www.iit.edu/career-services" target="_blank" rel="noopener" style="color: var(--iit-scarlet);">https://www.iit.edu/career-services</a>
+                        Illinois Institute of Technology. (2026). <em>Career Services & Experiential Learning</em>. Illinois Tech. <a href="https://www.iit.edu/career-services" target="_blank" rel="noopener" style="color: var(--iit-scarlet);">https://www.iit.edu/career-services</a>
                     </p>
                     
                     <p style="margin-bottom: var(--spacing-lg); padding-left: 2rem; text-indent: -2rem;">
-                        Illinois Institute of Technology. (2024). <em>Elevate @ Illinois Tech</em>. Illinois Tech. <a href="https://elevate.iit.edu/" target="_blank" rel="noopener" style="color: var(--iit-scarlet);">https://elevate.iit.edu/</a>
+                        Illinois Institute of Technology. (2026). <em>Elevate @ Illinois Tech</em>. Illinois Tech. <a href="https://elevate.iit.edu/" target="_blank" rel="noopener" style="color: var(--iit-scarlet);">https://elevate.iit.edu/</a>
                     </p>
                     
                     <p style="margin-bottom: var(--spacing-lg); padding-left: 2rem; text-indent: -2rem;">
-                        Illinois Institute of Technology. (2024). <em>312: Student engagement platform</em>. Illinois Tech. <a href="https://312.iit.edu/" target="_blank" rel="noopener" style="color: var(--iit-scarlet);">https://312.iit.edu/</a>
+                        Illinois Institute of Technology. (2026). <em>312: Student engagement platform</em>. Illinois Tech. <a href="https://312.iit.edu/" target="_blank" rel="noopener" style="color: var(--iit-scarlet);">https://312.iit.edu/</a>
                     </p>
                 </div>
             </div>
@@ -3845,24 +3933,72 @@
     </footer>
 
     <script>
-        // Navigation functionality
+        // Dropdown Navigation functionality
+        document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+            const btn = dropdown.querySelector('.nav-dropdown-btn');
+            
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                // Close other dropdowns
+                document.querySelectorAll('.nav-dropdown').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('open');
+                });
+                // Toggle current dropdown
+                dropdown.classList.toggle('open');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+        });
+
+        // Handle section navigation for both nav-btn and dropdown items
+        function navigateToSection(sectionId) {
+            // Remove active from all nav buttons and dropdown items
+            document.querySelectorAll('.nav-btn').forEach(b => {
+                b.classList.remove('active');
+                b.removeAttribute('aria-current');
+            });
+            document.querySelectorAll('.nav-dropdown-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show corresponding section
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+
+            // Close all dropdowns
+            document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+
+            // Close mobile menu if open
+            document.querySelector('.main-nav').classList.remove('show');
+        }
+
+        // Nav button click (Overview)
         document.querySelectorAll('.nav-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                // Update active nav button
-                document.querySelectorAll('.nav-btn').forEach(b => {
-                    b.classList.remove('active');
-                    b.removeAttribute('aria-current');
-                });
-                this.classList.add('active');
-                this.setAttribute('aria-current', 'page');
-
-                // Show corresponding section
                 const sectionId = this.getAttribute('data-section');
-                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-                document.getElementById(sectionId).classList.add('active');
+                if (sectionId) {
+                    navigateToSection(sectionId);
+                    this.classList.add('active');
+                    this.setAttribute('aria-current', 'page');
+                }
+            });
+        });
 
-                // Close mobile menu if open
-                document.querySelector('.main-nav').classList.remove('show');
+        // Dropdown item click
+        document.querySelectorAll('.nav-dropdown-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const sectionId = this.getAttribute('data-section');
+                navigateToSection(sectionId);
+                this.classList.add('active');
+                // Also highlight parent dropdown button
+                this.closest('.nav-dropdown').querySelector('.nav-dropdown-btn').classList.add('active');
             });
         });
 
