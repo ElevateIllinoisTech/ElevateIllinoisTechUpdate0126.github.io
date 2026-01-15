@@ -3863,9 +3863,17 @@
                             <option value="may2026">May 2026</option>
                         </select>
                     </div>
-                    <div style="display: flex; align-items: center; gap: var(--spacing-sm); color: var(--iit-gray-dark); font-size: 0.9rem;">
-                        <span style="width: 10px; height: 10px; background: #4CAF50; border-radius: 50%;"></span>
-                        <span>Data as of <span id="data-timestamp">January 14, 2026</span></span>
+                    <div id="data-status-indicator" style="display: flex; align-items: center; gap: var(--spacing-sm); color: #2E7D32; font-size: 0.9rem; padding: 8px 14px; background: #E8F5E9; border-radius: 20px;">
+                        <span id="status-dot" style="width: 10px; height: 10px; background: #4CAF50; border-radius: 50%;"></span>
+                        <span id="data-status-label">ACTUAL DATA</span>
+                    </div>
+                </div>
+                <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--iit-gray-medium); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--spacing-sm);">
+                    <div style="font-size: 0.85rem; color: var(--iit-gray-dark);">
+                        <strong>Data as of:</strong> <span id="data-timestamp">January 14, 2026</span>
+                    </div>
+                    <div style="font-size: 0.8rem; color: var(--iit-gray-dark); font-style: italic;">
+                        📊 Actuals are published by the 5th of each month • Future months display "Awaiting Data" until actuals are available
                     </div>
                 </div>
             </div>
@@ -4612,27 +4620,58 @@
         <section id="metrics" class="section" aria-labelledby="metrics-heading">
             <div class="section-header">
                 <h2 id="metrics-heading">Program Metrics</h2>
-                <p>Elevate Program Progress Report | December 2025 - January 2026</p>
+                <p>Elevate Program Progress Report</p>
             </div>
 
+            <!-- Month Toggle Selector for Metrics -->
+            <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-lg); box-shadow: var(--shadow-sm); margin-bottom: var(--spacing-xl);">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--spacing-md);">
+                    <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                        <span style="font-weight: 600; color: var(--iit-black);">📅 Reporting Period:</span>
+                        <select id="metrics-month-selector" style="padding: 10px 16px; border: 2px solid var(--iit-scarlet); border-radius: 8px; font-size: 1rem; font-weight: 600; color: var(--iit-scarlet); background: white; cursor: pointer; min-width: 180px;" onchange="updateMetricsPageForMonth(this.value)">
+                            <option value="jan2026" selected>January 2026</option>
+                            <option value="feb2026">February 2026</option>
+                            <option value="mar2026">March 2026</option>
+                            <option value="apr2026">April 2026</option>
+                            <option value="may2026">May 2026</option>
+                        </select>
+                    </div>
+                    <div id="metrics-status-indicator" style="display: flex; align-items: center; gap: var(--spacing-sm); color: #2E7D32; font-size: 0.9rem; padding: 8px 14px; background: #E8F5E9; border-radius: 20px;">
+                        <span id="metrics-status-dot" style="width: 10px; height: 10px; background: #4CAF50; border-radius: 50%;"></span>
+                        <span id="metrics-status-label">ACTUAL DATA</span>
+                    </div>
+                </div>
+                <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--iit-gray-medium); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--spacing-sm);">
+                    <div style="font-size: 0.85rem; color: var(--iit-gray-dark);">
+                        <strong>Data as of:</strong> <span id="metrics-data-timestamp">January 14, 2026</span>
+                    </div>
+                    <div style="font-size: 0.8rem; color: var(--iit-gray-dark); font-style: italic;">
+                        📊 Actuals are published by the 5th of each month • Future months display "Awaiting Data" until actuals are available
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metrics Content Container (can be toggled) -->
+            <div id="metrics-content-container">
+
             <!-- Hero Stats -->
-            <div class="metrics-hero">
+            <div class="metrics-hero" id="metrics-hero-section">
                 <div class="hero-card primary">
                     <div class="hero-label">Total Program Enrollment</div>
-                    <div class="hero-value">396</div>
-                    <span class="hero-change">↑ +104 (+35%)</span>
+                    <div class="hero-value" id="metrics-total-enrollment">396</div>
+                    <span class="hero-change" id="metrics-enrollment-change">↑ +104 (+35%)</span>
                     <div class="hero-subtext">Since November 5, 2025</div>
                 </div>
                 <div class="hero-card">
                     <div class="hero-label">Total Check-Ins Scheduled</div>
-                    <div class="hero-value" style="color: var(--iit-black);">242</div>
-                    <span class="hero-change">↑ +83 from Nov 5</span>
-                    <div class="hero-subtext">26 upcoming appointments</div>
+                    <div class="hero-value" style="color: var(--iit-black);" id="metrics-checkins">242</div>
+                    <span class="hero-change" id="metrics-checkins-change">↑ +83 from Nov 5</span>
+                    <div class="hero-subtext" id="metrics-upcoming">26 upcoming appointments</div>
                 </div>
                 <div class="hero-card">
                     <div class="hero-label">Program Reach</div>
-                    <div class="hero-value" style="color: var(--iit-scarlet);">34%</div>
-                    <span class="hero-change">↑ +9% from Nov 5</span>
+                    <div class="hero-value" style="color: var(--iit-scarlet);" id="metrics-reach">34%</div>
+                    <span class="hero-change" id="metrics-reach-change">↑ +9% from Nov 5</span>
                     <div class="hero-subtext">of 1,151 eligible students</div>
                 </div>
             </div>
@@ -5245,6 +5284,7 @@
 
     <script>
         // Month data storage for visualization toggle
+        // Actuals are updated by the 5th of each month
         const monthlyData = {
             'jan2026': {
                 enrolled: 396,
@@ -5256,55 +5296,65 @@
                 badgesChange: '↑ +47 from Dec',
                 typesChange: '↑ +23 new badges',
                 avgChange: '↑ +0.12 from Dec',
-                timestamp: 'January 14, 2026'
+                timestamp: 'January 14, 2026',
+                isActual: true,
+                statusLabel: 'ACTUAL DATA'
             },
             'feb2026': {
-                enrolled: 425,
-                badges: 745,
+                enrolled: '—',
+                badges: '—',
                 types: 71,
-                avgBadges: 1.75,
-                active: 340,
-                enrolledChange: '↑ +29 from Jan',
-                badgesChange: '↑ +86 from Jan',
-                typesChange: '— No change',
-                avgChange: '↑ +0.09 from Jan',
-                timestamp: 'February 2026 (Projected)'
+                avgBadges: '—',
+                active: '—',
+                enrolledChange: 'Awaiting actuals',
+                badgesChange: 'Awaiting actuals',
+                typesChange: '—',
+                avgChange: 'Awaiting actuals',
+                timestamp: 'February 2026',
+                isActual: false,
+                statusLabel: 'AWAITING DATA • Updated by Mar 5'
             },
             'mar2026': {
-                enrolled: 458,
-                badges: 842,
-                types: 75,
-                avgBadges: 1.84,
-                active: 375,
-                enrolledChange: '↑ +33 from Feb',
-                badgesChange: '↑ +97 from Feb',
-                typesChange: '↑ +4 new badges',
-                avgChange: '↑ +0.09 from Feb',
-                timestamp: 'March 2026 (Projected)'
+                enrolled: '—',
+                badges: '—',
+                types: '—',
+                avgBadges: '—',
+                active: '—',
+                enrolledChange: 'Awaiting actuals',
+                badgesChange: 'Awaiting actuals',
+                typesChange: 'Awaiting actuals',
+                avgChange: 'Awaiting actuals',
+                timestamp: 'March 2026',
+                isActual: false,
+                statusLabel: 'AWAITING DATA • Updated by Apr 5'
             },
             'apr2026': {
-                enrolled: 485,
-                badges: 950,
-                types: 75,
-                avgBadges: 1.96,
-                active: 402,
-                enrolledChange: '↑ +27 from Mar',
-                badgesChange: '↑ +108 from Mar',
-                typesChange: '— No change',
-                avgChange: '↑ +0.12 from Mar',
-                timestamp: 'April 2026 (Projected)'
+                enrolled: '—',
+                badges: '—',
+                types: '—',
+                avgBadges: '—',
+                active: '—',
+                enrolledChange: 'Awaiting actuals',
+                badgesChange: 'Awaiting actuals',
+                typesChange: 'Awaiting actuals',
+                avgChange: 'Awaiting actuals',
+                timestamp: 'April 2026',
+                isActual: false,
+                statusLabel: 'AWAITING DATA • Updated by May 5'
             },
             'may2026': {
-                enrolled: 500,
-                badges: 1050,
-                types: 78,
-                avgBadges: 2.10,
-                active: 425,
-                enrolledChange: '↑ +15 from Apr',
-                badgesChange: '↑ +100 from Apr',
-                typesChange: '↑ +3 new badges',
-                avgChange: '↑ +0.14 from Apr',
-                timestamp: 'May 2026 (Target)'
+                enrolled: '—',
+                badges: '—',
+                types: '—',
+                avgBadges: '—',
+                active: '—',
+                enrolledChange: 'Awaiting actuals',
+                badgesChange: 'Awaiting actuals',
+                typesChange: 'Awaiting actuals',
+                avgChange: 'Awaiting actuals',
+                timestamp: 'May 2026',
+                isActual: false,
+                statusLabel: 'AWAITING DATA • Updated by Jun 5'
             }
         };
 
@@ -5328,29 +5378,185 @@
 
             // Update timestamp
             document.getElementById('data-timestamp').textContent = data.timestamp;
+            
+            // Update status label
+            document.getElementById('data-status-label').textContent = data.statusLabel;
 
-            // Update colors based on whether data is projected
-            const isProjected = month !== 'jan2026';
+            // Update colors and styling based on whether data is actual or awaiting
+            const isActual = data.isActual;
             const changeElements = document.querySelectorAll('[id$="-change"]');
+            const statNumbers = document.querySelectorAll('#viz-metrics-grid .stat-number');
+            
             changeElements.forEach(el => {
-                if (isProjected) {
-                    el.style.color = '#FF9800';
-                    el.style.fontStyle = 'italic';
-                } else {
+                if (isActual) {
                     el.style.color = '#4CAF50';
                     el.style.fontStyle = 'normal';
+                } else {
+                    el.style.color = '#9E9E9E';
+                    el.style.fontStyle = 'italic';
+                }
+            });
+            
+            statNumbers.forEach(el => {
+                if (isActual) {
+                    el.style.color = 'var(--iit-scarlet)';
+                } else {
+                    el.style.color = '#BDBDBD';
                 }
             });
 
-            // Visual indicator for projected data
+            // Visual indicator for awaiting data
             const metricsGrid = document.getElementById('viz-metrics-grid');
-            if (isProjected) {
-                metricsGrid.style.border = '2px dashed #FF9800';
+            const statusIndicator = document.getElementById('data-status-indicator');
+            
+            if (!isActual) {
+                metricsGrid.style.border = '2px dashed #BDBDBD';
                 metricsGrid.style.borderRadius = '12px';
                 metricsGrid.style.padding = '16px';
+                metricsGrid.style.background = '#FAFAFA';
+                statusIndicator.style.background = '#FFF3E0';
+                statusIndicator.style.color = '#E65100';
+                document.getElementById('status-dot').style.background = '#FF9800';
             } else {
                 metricsGrid.style.border = 'none';
                 metricsGrid.style.padding = '0';
+                metricsGrid.style.background = 'transparent';
+                statusIndicator.style.background = '#E8F5E9';
+                statusIndicator.style.color = '#2E7D32';
+                document.getElementById('status-dot').style.background = '#4CAF50';
+            }
+        }
+
+        // Metrics Page Month Data
+        const metricsPageData = {
+            'jan2026': {
+                enrollment: '396',
+                enrollmentChange: '↑ +104 (+35%)',
+                checkins: '242',
+                checkinsChange: '↑ +83 from Nov 5',
+                upcoming: '26 upcoming appointments',
+                reach: '34%',
+                reachChange: '↑ +9% from Nov 5',
+                timestamp: 'January 14, 2026',
+                isActual: true,
+                statusLabel: 'ACTUAL DATA'
+            },
+            'feb2026': {
+                enrollment: '—',
+                enrollmentChange: 'Awaiting actuals',
+                checkins: '—',
+                checkinsChange: 'Awaiting actuals',
+                upcoming: 'Awaiting actuals',
+                reach: '—',
+                reachChange: 'Awaiting actuals',
+                timestamp: 'February 2026',
+                isActual: false,
+                statusLabel: 'AWAITING DATA • Updated by Mar 5'
+            },
+            'mar2026': {
+                enrollment: '—',
+                enrollmentChange: 'Awaiting actuals',
+                checkins: '—',
+                checkinsChange: 'Awaiting actuals',
+                upcoming: 'Awaiting actuals',
+                reach: '—',
+                reachChange: 'Awaiting actuals',
+                timestamp: 'March 2026',
+                isActual: false,
+                statusLabel: 'AWAITING DATA • Updated by Apr 5'
+            },
+            'apr2026': {
+                enrollment: '—',
+                enrollmentChange: 'Awaiting actuals',
+                checkins: '—',
+                checkinsChange: 'Awaiting actuals',
+                upcoming: 'Awaiting actuals',
+                reach: '—',
+                reachChange: 'Awaiting actuals',
+                timestamp: 'April 2026',
+                isActual: false,
+                statusLabel: 'AWAITING DATA • Updated by May 5'
+            },
+            'may2026': {
+                enrollment: '—',
+                enrollmentChange: 'Awaiting actuals',
+                checkins: '—',
+                checkinsChange: 'Awaiting actuals',
+                upcoming: 'Awaiting actuals',
+                reach: '—',
+                reachChange: 'Awaiting actuals',
+                timestamp: 'May 2026',
+                isActual: false,
+                statusLabel: 'AWAITING DATA • Updated by Jun 5'
+            }
+        };
+
+        // Update metrics page when month changes
+        function updateMetricsPageForMonth(month) {
+            const data = metricsPageData[month];
+            if (!data) return;
+
+            // Update hero stats
+            document.getElementById('metrics-total-enrollment').textContent = data.enrollment;
+            document.getElementById('metrics-enrollment-change').textContent = data.enrollmentChange;
+            document.getElementById('metrics-checkins').textContent = data.checkins;
+            document.getElementById('metrics-checkins-change').textContent = data.checkinsChange;
+            document.getElementById('metrics-upcoming').textContent = data.upcoming;
+            document.getElementById('metrics-reach').textContent = data.reach;
+            document.getElementById('metrics-reach-change').textContent = data.reachChange;
+
+            // Update status elements
+            document.getElementById('metrics-data-timestamp').textContent = data.timestamp;
+            document.getElementById('metrics-status-label').textContent = data.statusLabel;
+
+            // Update styling based on actual vs awaiting
+            const isActual = data.isActual;
+            const statusIndicator = document.getElementById('metrics-status-indicator');
+            const statusDot = document.getElementById('metrics-status-dot');
+            const heroSection = document.getElementById('metrics-hero-section');
+            const contentContainer = document.getElementById('metrics-content-container');
+
+            if (!isActual) {
+                statusIndicator.style.background = '#FFF3E0';
+                statusIndicator.style.color = '#E65100';
+                statusDot.style.background = '#FF9800';
+                
+                // Gray out hero values
+                document.getElementById('metrics-total-enrollment').style.color = '#BDBDBD';
+                document.getElementById('metrics-checkins').style.color = '#BDBDBD';
+                document.getElementById('metrics-reach').style.color = '#BDBDBD';
+                
+                // Gray out change indicators
+                document.getElementById('metrics-enrollment-change').style.color = '#9E9E9E';
+                document.getElementById('metrics-checkins-change').style.color = '#9E9E9E';
+                document.getElementById('metrics-reach-change').style.color = '#9E9E9E';
+                document.getElementById('metrics-upcoming').style.color = '#9E9E9E';
+                
+                // Add visual indicator
+                heroSection.style.border = '2px dashed #BDBDBD';
+                heroSection.style.borderRadius = '12px';
+                heroSection.style.padding = '16px';
+                heroSection.style.background = '#FAFAFA';
+            } else {
+                statusIndicator.style.background = '#E8F5E9';
+                statusIndicator.style.color = '#2E7D32';
+                statusDot.style.background = '#4CAF50';
+                
+                // Restore hero values colors
+                document.getElementById('metrics-total-enrollment').style.color = '';
+                document.getElementById('metrics-checkins').style.color = 'var(--iit-black)';
+                document.getElementById('metrics-reach').style.color = 'var(--iit-scarlet)';
+                
+                // Restore change indicators
+                document.getElementById('metrics-enrollment-change').style.color = '';
+                document.getElementById('metrics-checkins-change').style.color = '';
+                document.getElementById('metrics-reach-change').style.color = '';
+                document.getElementById('metrics-upcoming').style.color = '';
+                
+                // Remove visual indicator
+                heroSection.style.border = 'none';
+                heroSection.style.padding = '0';
+                heroSection.style.background = 'transparent';
             }
         }
 
