@@ -3847,30 +3847,388 @@
         <section id="visualizations" class="section" aria-labelledby="visualizations-heading">
             <div class="section-header">
                 <h2 id="visualizations-heading">Program Visualizations</h2>
-                <p>Interactive data visualizations across all Elevate program metrics | January 2026</p>
+                <p>Interactive data visualizations across all Elevate program metrics</p>
             </div>
 
-            <!-- Key Metrics Summary -->
-            <div class="stats-grid" style="margin-bottom: var(--spacing-xl);">
+            <!-- Month Toggle Selector -->
+            <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-lg); box-shadow: var(--shadow-sm); margin-bottom: var(--spacing-xl);">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--spacing-md);">
+                    <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                        <span style="font-weight: 600; color: var(--iit-black);">📅 Reporting Period:</span>
+                        <select id="month-selector" style="padding: 10px 16px; border: 2px solid var(--iit-scarlet); border-radius: 8px; font-size: 1rem; font-weight: 600; color: var(--iit-scarlet); background: white; cursor: pointer; min-width: 180px;" onchange="updateMetricsForMonth(this.value)">
+                            <option value="jan2026" selected>January 2026</option>
+                            <option value="feb2026">February 2026</option>
+                            <option value="mar2026">March 2026</option>
+                            <option value="apr2026">April 2026</option>
+                            <option value="may2026">May 2026</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--spacing-sm); color: var(--iit-gray-dark); font-size: 0.9rem;">
+                        <span style="width: 10px; height: 10px; background: #4CAF50; border-radius: 50%;"></span>
+                        <span>Data as of <span id="data-timestamp">January 14, 2026</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Metrics Summary with Month Data -->
+            <div class="stats-grid" style="margin-bottom: var(--spacing-xl);" id="viz-metrics-grid">
                 <div class="stat-card">
-                    <div class="stat-number">396</div>
+                    <div class="stat-number" id="viz-enrolled">396</div>
                     <div class="stat-label">Total Enrolled</div>
+                    <div style="font-size: 0.75rem; color: #4CAF50; margin-top: 4px;" id="viz-enrolled-change">↑ +12 from Dec</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">659</div>
+                    <div class="stat-number" id="viz-badges">659</div>
                     <div class="stat-label">Badges Awarded</div>
+                    <div style="font-size: 0.75rem; color: #4CAF50; margin-top: 4px;" id="viz-badges-change">↑ +47 from Dec</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">71</div>
+                    <div class="stat-number" id="viz-types">71</div>
                     <div class="stat-label">Badge Types</div>
+                    <div style="font-size: 0.75rem; color: #4CAF50; margin-top: 4px;" id="viz-types-change">↑ +23 new badges</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">School Pilots</div>
+                    <div class="stat-number" id="viz-avg-badges">1.66</div>
+                    <div class="stat-label">Avg Badges/Student</div>
+                    <div style="font-size: 0.75rem; color: #4CAF50; margin-top: 4px;" id="viz-avg-change">↑ +0.12 from Dec</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="viz-active">312</div>
+                    <div class="stat-label">Active This Month</div>
+                    <div style="font-size: 0.75rem; color: var(--iit-gray-dark); margin-top: 4px;">78.8% engagement rate</div>
                 </div>
             </div>
 
-            <!-- Row 1: Enrollment & Badge Distribution -->
+            <!-- NEW: Monthly Growth Trend -->
+            <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm); margin-bottom: var(--spacing-xl);">
+                <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>📈 Enrollment & Badge Growth Trend</h3>
+                
+                <div style="display: flex; gap: var(--spacing-xl); flex-wrap: wrap;">
+                    <!-- Line Chart Area -->
+                    <div style="flex: 2; min-width: 400px;">
+                        <svg viewBox="0 0 600 250" style="width: 100%; height: auto;">
+                            <!-- Grid lines -->
+                            <line x1="50" y1="30" x2="50" y2="200" stroke="#e0e0e0" stroke-width="1"/>
+                            <line x1="50" y1="200" x2="580" y2="200" stroke="#e0e0e0" stroke-width="1"/>
+                            <line x1="50" y1="150" x2="580" y2="150" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="4"/>
+                            <line x1="50" y1="100" x2="580" y2="100" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="4"/>
+                            <line x1="50" y1="50" x2="580" y2="50" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="4"/>
+                            
+                            <!-- Y-axis labels -->
+                            <text x="45" y="205" text-anchor="end" font-size="10" fill="#666">0</text>
+                            <text x="45" y="155" text-anchor="end" font-size="10" fill="#666">200</text>
+                            <text x="45" y="105" text-anchor="end" font-size="10" fill="#666">400</text>
+                            <text x="45" y="55" text-anchor="end" font-size="10" fill="#666">600</text>
+                            
+                            <!-- X-axis labels (months) -->
+                            <text x="90" y="220" text-anchor="middle" font-size="10" fill="#666">Sep</text>
+                            <text x="170" y="220" text-anchor="middle" font-size="10" fill="#666">Oct</text>
+                            <text x="250" y="220" text-anchor="middle" font-size="10" fill="#666">Nov</text>
+                            <text x="330" y="220" text-anchor="middle" font-size="10" fill="#666">Dec</text>
+                            <text x="410" y="220" text-anchor="middle" font-size="10" fill="#666" font-weight="bold">Jan</text>
+                            <text x="490" y="220" text-anchor="middle" font-size="10" fill="#999">Feb</text>
+                            <text x="570" y="220" text-anchor="middle" font-size="10" fill="#999">Mar</text>
+                            
+                            <!-- Enrollment line (green) -->
+                            <polyline points="90,180 170,155 250,130 330,118 410,105" fill="none" stroke="#4CAF50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Future projection (dashed) -->
+                            <polyline points="410,105 490,90 570,75" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="8,4" opacity="0.5"/>
+                            
+                            <!-- Badges line (scarlet) -->
+                            <polyline points="90,195 170,165 250,120 330,85 410,67" fill="none" stroke="#B71C1C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Future projection (dashed) -->
+                            <polyline points="410,67 490,50 570,35" fill="none" stroke="#B71C1C" stroke-width="2" stroke-dasharray="8,4" opacity="0.5"/>
+                            
+                            <!-- Data points - Enrollment -->
+                            <circle cx="90" cy="180" r="5" fill="#4CAF50"/>
+                            <circle cx="170" cy="155" r="5" fill="#4CAF50"/>
+                            <circle cx="250" cy="130" r="5" fill="#4CAF50"/>
+                            <circle cx="330" cy="118" r="5" fill="#4CAF50"/>
+                            <circle cx="410" cy="105" r="7" fill="#4CAF50" stroke="white" stroke-width="2"/>
+                            
+                            <!-- Data points - Badges -->
+                            <circle cx="90" cy="195" r="5" fill="#B71C1C"/>
+                            <circle cx="170" cy="165" r="5" fill="#B71C1C"/>
+                            <circle cx="250" cy="120" r="5" fill="#B71C1C"/>
+                            <circle cx="330" cy="85" r="5" fill="#B71C1C"/>
+                            <circle cx="410" cy="67" r="7" fill="#B71C1C" stroke="white" stroke-width="2"/>
+                            
+                            <!-- Current month indicator -->
+                            <line x1="410" y1="30" x2="410" y2="200" stroke="var(--iit-scarlet)" stroke-width="1" stroke-dasharray="4" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Legend & Stats -->
+                    <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; justify-content: center; gap: var(--spacing-md);">
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="width: 20px; height: 4px; background: #4CAF50; border-radius: 2px;"></span>
+                            <span style="font-weight: 600;">Enrollment</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="width: 20px; height: 4px; background: #B71C1C; border-radius: 2px;"></span>
+                            <span style="font-weight: 600;">Badges Awarded</span>
+                        </div>
+                        <div style="margin-top: var(--spacing-md); padding: var(--spacing-md); background: var(--iit-gray-light); border-radius: 8px;">
+                            <div style="font-size: 0.8rem; color: var(--iit-gray-dark);">Monthly Growth Rate</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: #4CAF50;">+8.2%</div>
+                            <div style="font-size: 0.8rem; color: var(--iit-gray-dark);">avg enrollment/month</div>
+                        </div>
+                        <div style="padding: var(--spacing-md); background: #FFF3E0; border-radius: 8px; border-left: 4px solid #E65100;">
+                            <div style="font-size: 0.8rem; font-weight: 600; color: #E65100;">🎯 Spring Target</div>
+                            <div style="font-size: 1.2rem; font-weight: 700; color: #E65100;">500 students</div>
+                            <div style="font-size: 0.8rem; color: var(--iit-gray-dark);">79.2% to goal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Student Engagement Funnel -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+                
+                <!-- Engagement Funnel -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>🎯 Student Engagement Funnel</h3>
+                    
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                        <!-- Stage 1: Awareness -->
+                        <div style="width: 100%; max-width: 350px; height: 45px; background: linear-gradient(90deg, #E3F2FD, #BBDEFB); border-radius: 8px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--spacing-md);">
+                            <span style="font-weight: 600; color: #1565C0;">👁️ Awareness</span>
+                            <span style="font-weight: 700; color: #1565C0;">1,170 students</span>
+                        </div>
+                        <div style="width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 12px solid #BBDEFB;"></div>
+                        
+                        <!-- Stage 2: Enrolled -->
+                        <div style="width: 85%; max-width: 300px; height: 45px; background: linear-gradient(90deg, #E8F5E9, #A5D6A7); border-radius: 8px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--spacing-md);">
+                            <span style="font-weight: 600; color: #2E7D32;">✅ Enrolled</span>
+                            <span style="font-weight: 700; color: #2E7D32;">396 (33.8%)</span>
+                        </div>
+                        <div style="width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 12px solid #A5D6A7;"></div>
+                        
+                        <!-- Stage 3: Active (1+ badge) -->
+                        <div style="width: 70%; max-width: 250px; height: 45px; background: linear-gradient(90deg, #FFF3E0, #FFCC80); border-radius: 8px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--spacing-md);">
+                            <span style="font-weight: 600; color: #E65100;">🏅 1+ Badge</span>
+                            <span style="font-weight: 700; color: #E65100;">287 (72.5%)</span>
+                        </div>
+                        <div style="width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 12px solid #FFCC80;"></div>
+                        
+                        <!-- Stage 4: Engaged (3+ badges) -->
+                        <div style="width: 55%; max-width: 200px; height: 45px; background: linear-gradient(90deg, #F3E5F5, #CE93D8); border-radius: 8px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--spacing-md);">
+                            <span style="font-weight: 600; color: #7B1FA2;">🔥 3+ Badges</span>
+                            <span style="font-weight: 700; color: #7B1FA2;">142 (35.9%)</span>
+                        </div>
+                        <div style="width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 12px solid #CE93D8;"></div>
+                        
+                        <!-- Stage 5: Super Engaged (5+ badges) -->
+                        <div style="width: 40%; max-width: 150px; height: 45px; background: linear-gradient(90deg, #FFEBEE, #EF9A9A); border-radius: 8px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--spacing-md);">
+                            <span style="font-weight: 600; color: #C62828;">⭐ 5+ Badges</span>
+                            <span style="font-weight: 700; color: #C62828;">67 (16.9%)</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-lg); padding-top: var(--spacing-md); border-top: 1px solid var(--iit-gray-medium); font-size: 0.85rem; color: var(--iit-gray-dark);">
+                        💡 <strong>Insight:</strong> 27.5% of enrolled students have not earned any badges yet — opportunity for engagement outreach
+                    </div>
+                </div>
+
+                <!-- Badge Velocity by Week -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>⚡ Badge Velocity (Last 4 Weeks)</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500;">Week of Dec 23</span>
+                                <span style="font-weight: 700; color: var(--iit-gray-dark);">12 badges</span>
+                            </div>
+                            <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 24%; height: 100%; background: linear-gradient(90deg, #90CAF9, #42A5F5); border-radius: 6px; display: flex; align-items: center; padding-left: 8px; color: white; font-size: 0.8rem;">🎄 Holiday</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500;">Week of Dec 30</span>
+                                <span style="font-weight: 700; color: var(--iit-gray-dark);">8 badges</span>
+                            </div>
+                            <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 16%; height: 100%; background: linear-gradient(90deg, #90CAF9, #42A5F5); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500;">Week of Jan 6</span>
+                                <span style="font-weight: 700; color: #4CAF50;">32 badges</span>
+                            </div>
+                            <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 64%; height: 100%; background: linear-gradient(90deg, #81C784, #4CAF50); border-radius: 6px; display: flex; align-items: center; padding-left: 8px; color: white; font-size: 0.8rem;">📚 Classes Resume</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500; color: var(--iit-scarlet);">Week of Jan 13 (Current)</span>
+                                <span style="font-weight: 700; color: var(--iit-scarlet);">47 badges</span>
+                            </div>
+                            <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 94%; height: 100%; background: linear-gradient(90deg, #EF9A9A, #B71C1C); border-radius: 6px; display: flex; align-items: center; padding-left: 8px; color: white; font-size: 0.8rem; font-weight: 600;">🔥 Highest Week!</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-lg); display: flex; justify-content: space-between; padding: var(--spacing-md); background: #E8F5E9; border-radius: 8px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.8rem; color: var(--iit-gray-dark);">Avg/Week</div>
+                            <div style="font-size: 1.3rem; font-weight: 700; color: #2E7D32;">24.75</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.8rem; color: var(--iit-gray-dark);">Peak Week</div>
+                            <div style="font-size: 1.3rem; font-weight: 700; color: var(--iit-scarlet);">47</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.8rem; color: var(--iit-gray-dark);">Trend</div>
+                            <div style="font-size: 1.3rem; font-weight: 700; color: #4CAF50;">↑ 47%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: NACE Competency Distribution & School Breakdown -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+                
+                <!-- NACE Competency Radar -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>🎯 NACE Competency Coverage</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="min-width: 180px; font-size: 0.9rem;">Career & Self-Development</span>
+                            <div style="flex: 1; height: 24px; background: var(--iit-gray-light); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 95%; height: 100%; background: linear-gradient(90deg, #4CAF50, #2E7D32); border-radius: 4px;"></div>
+                            </div>
+                            <span style="min-width: 40px; font-weight: 700; color: #2E7D32;">95%</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="min-width: 180px; font-size: 0.9rem;">Communication</span>
+                            <div style="flex: 1; height: 24px; background: var(--iit-gray-light); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 88%; height: 100%; background: linear-gradient(90deg, #2196F3, #1565C0); border-radius: 4px;"></div>
+                            </div>
+                            <span style="min-width: 40px; font-weight: 700; color: #1565C0;">88%</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="min-width: 180px; font-size: 0.9rem;">Critical Thinking</span>
+                            <div style="flex: 1; height: 24px; background: var(--iit-gray-light); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 92%; height: 100%; background: linear-gradient(90deg, #FF9800, #E65100); border-radius: 4px;"></div>
+                            </div>
+                            <span style="min-width: 40px; font-weight: 700; color: #E65100;">92%</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="min-width: 180px; font-size: 0.9rem;">Equity & Inclusion</span>
+                            <div style="flex: 1; height: 24px; background: var(--iit-gray-light); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 72%; height: 100%; background: linear-gradient(90deg, #9C27B0, #6A1B9A); border-radius: 4px;"></div>
+                            </div>
+                            <span style="min-width: 40px; font-weight: 700; color: #6A1B9A;">72%</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="min-width: 180px; font-size: 0.9rem;">Leadership</span>
+                            <div style="flex: 1; height: 24px; background: var(--iit-gray-light); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 85%; height: 100%; background: linear-gradient(90deg, #F44336, #C62828); border-radius: 4px;"></div>
+                            </div>
+                            <span style="min-width: 40px; font-weight: 700; color: #C62828;">85%</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="min-width: 180px; font-size: 0.9rem;">Professionalism</span>
+                            <div style="flex: 1; height: 24px; background: var(--iit-gray-light); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #00BCD4, #00838F); border-radius: 4px;"></div>
+                            </div>
+                            <span style="min-width: 40px; font-weight: 700; color: #00838F;">78%</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="min-width: 180px; font-size: 0.9rem;">Teamwork</span>
+                            <div style="flex: 1; height: 24px; background: var(--iit-gray-light); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 82%; height: 100%; background: linear-gradient(90deg, #607D8B, #455A64); border-radius: 4px;"></div>
+                            </div>
+                            <span style="min-width: 40px; font-weight: 700; color: #455A64;">82%</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                            <span style="min-width: 180px; font-size: 0.9rem;">Technology</span>
+                            <div style="flex: 1; height: 24px; background: var(--iit-gray-light); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 96%; height: 100%; background: linear-gradient(90deg, #673AB7, #4527A0); border-radius: 4px;"></div>
+                            </div>
+                            <span style="min-width: 40px; font-weight: 700; color: #4527A0;">96%</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: #FFF8E1; border-radius: 8px; border-left: 4px solid #FFC107;">
+                        <div style="font-size: 0.85rem;">💡 <strong>Gap Analysis:</strong> Equity & Inclusion (72%) and Professionalism (78%) have the most room for badge expansion</div>
+                    </div>
+                </div>
+
+                <!-- Enrollment by College -->
+                <div style="background: var(--iit-white); border-radius: 12px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="color: var(--iit-black); margin-bottom: var(--spacing-lg); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);"><span style="width: 4px; height: 1.1rem; background: var(--iit-scarlet); border-radius: 2px;"></span>🏛️ Enrollment by College/School</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 600;">Armour Engineering</span>
+                                <span style="font-weight: 700;">156 (39.4%)</span>
+                            </div>
+                            <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 39.4%; height: 100%; background: linear-gradient(90deg, #B71C1C, #D32F2F); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 600;">Computing</span>
+                                <span style="font-weight: 700;">98 (24.7%)</span>
+                            </div>
+                            <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 24.7%; height: 100%; background: linear-gradient(90deg, #1565C0, #1976D2); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 600;">Stuart Business</span>
+                                <span style="font-weight: 700;">67 (16.9%)</span>
+                            </div>
+                            <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 16.9%; height: 100%; background: linear-gradient(90deg, #2E7D32, #43A047); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 600;">Lewis College</span>
+                                <span style="font-weight: 700;">42 (10.6%)</span>
+                            </div>
+                            <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 10.6%; height: 100%; background: linear-gradient(90deg, #7B1FA2, #9C27B0); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 600;">Architecture</span>
+                                <span style="font-weight: 700;">21 (5.3%)</span>
+                            </div>
+                            <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 5.3%; height: 100%; background: linear-gradient(90deg, #E65100, #FF9800); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 600;">Design + Other</span>
+                                <span style="font-weight: 700;">12 (3.0%)</span>
+                            </div>
+                            <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 3%; height: 100%; background: linear-gradient(90deg, #455A64, #607D8B); border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: #E3F2FD; border-radius: 8px; border-left: 4px solid #1976D2;">
+                        <div style="font-size: 0.85rem;">📊 <strong>Opportunity:</strong> Architecture (5.3%) and Design (3.0%) are underrepresented — consider targeted outreach</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 1: Enrollment & Badge Distribution (Original) -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
                 
                 <!-- Enrollment by Year -->
@@ -4886,6 +5244,116 @@
     </footer>
 
     <script>
+        // Month data storage for visualization toggle
+        const monthlyData = {
+            'jan2026': {
+                enrolled: 396,
+                badges: 659,
+                types: 71,
+                avgBadges: 1.66,
+                active: 312,
+                enrolledChange: '↑ +12 from Dec',
+                badgesChange: '↑ +47 from Dec',
+                typesChange: '↑ +23 new badges',
+                avgChange: '↑ +0.12 from Dec',
+                timestamp: 'January 14, 2026'
+            },
+            'feb2026': {
+                enrolled: 425,
+                badges: 745,
+                types: 71,
+                avgBadges: 1.75,
+                active: 340,
+                enrolledChange: '↑ +29 from Jan',
+                badgesChange: '↑ +86 from Jan',
+                typesChange: '— No change',
+                avgChange: '↑ +0.09 from Jan',
+                timestamp: 'February 2026 (Projected)'
+            },
+            'mar2026': {
+                enrolled: 458,
+                badges: 842,
+                types: 75,
+                avgBadges: 1.84,
+                active: 375,
+                enrolledChange: '↑ +33 from Feb',
+                badgesChange: '↑ +97 from Feb',
+                typesChange: '↑ +4 new badges',
+                avgChange: '↑ +0.09 from Feb',
+                timestamp: 'March 2026 (Projected)'
+            },
+            'apr2026': {
+                enrolled: 485,
+                badges: 950,
+                types: 75,
+                avgBadges: 1.96,
+                active: 402,
+                enrolledChange: '↑ +27 from Mar',
+                badgesChange: '↑ +108 from Mar',
+                typesChange: '— No change',
+                avgChange: '↑ +0.12 from Mar',
+                timestamp: 'April 2026 (Projected)'
+            },
+            'may2026': {
+                enrolled: 500,
+                badges: 1050,
+                types: 78,
+                avgBadges: 2.10,
+                active: 425,
+                enrolledChange: '↑ +15 from Apr',
+                badgesChange: '↑ +100 from Apr',
+                typesChange: '↑ +3 new badges',
+                avgChange: '↑ +0.14 from Apr',
+                timestamp: 'May 2026 (Target)'
+            }
+        };
+
+        // Update metrics when month changes
+        function updateMetricsForMonth(month) {
+            const data = monthlyData[month];
+            if (!data) return;
+
+            // Update stat cards
+            document.getElementById('viz-enrolled').textContent = data.enrolled;
+            document.getElementById('viz-badges').textContent = data.badges;
+            document.getElementById('viz-types').textContent = data.types;
+            document.getElementById('viz-avg-badges').textContent = data.avgBadges;
+            document.getElementById('viz-active').textContent = data.active;
+
+            // Update change indicators
+            document.getElementById('viz-enrolled-change').textContent = data.enrolledChange;
+            document.getElementById('viz-badges-change').textContent = data.badgesChange;
+            document.getElementById('viz-types-change').textContent = data.typesChange;
+            document.getElementById('viz-avg-change').textContent = data.avgChange;
+
+            // Update timestamp
+            document.getElementById('data-timestamp').textContent = data.timestamp;
+
+            // Update colors based on whether data is projected
+            const isProjected = month !== 'jan2026';
+            const changeElements = document.querySelectorAll('[id$="-change"]');
+            changeElements.forEach(el => {
+                if (isProjected) {
+                    el.style.color = '#FF9800';
+                    el.style.fontStyle = 'italic';
+                } else {
+                    el.style.color = '#4CAF50';
+                    el.style.fontStyle = 'normal';
+                }
+            });
+
+            // Visual indicator for projected data
+            const metricsGrid = document.getElementById('viz-metrics-grid');
+            if (isProjected) {
+                metricsGrid.style.border = '2px dashed #FF9800';
+                metricsGrid.style.borderRadius = '12px';
+                metricsGrid.style.padding = '16px';
+            } else {
+                metricsGrid.style.border = 'none';
+                metricsGrid.style.padding = '0';
+            }
+        }
+
         // Dropdown Navigation functionality
         document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
             const btn = dropdown.querySelector('.nav-dropdown-btn');
