@@ -507,16 +507,19 @@
         .badge-icon {
             width: 48px;
             height: 48px;
-            border-radius: 4px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+            background: #B71C1C;
+            color: white;
         }
 
-        .badge-card.foundational .badge-icon { background: var(--color-foundational-light); }
-        .badge-card.milestone .badge-icon { background: var(--color-milestone-light); }
-        .badge-card.skills .badge-icon { background: var(--color-skills-light); }
+        .badge-card.foundational .badge-icon { background: #B71C1C; }
+        .badge-card.milestone .badge-icon { background: #1E40AF; }
+        .badge-card.skills .badge-icon { background: #166534; }
+        .badge-card.experience .badge-icon { background: #6B21A8; }
 
         .badge-type {
             font-size: 0.7rem;
@@ -1900,7 +1903,7 @@
                 <!-- Leadership Track -->
                 <div class="badge-card foundational" data-track="leadership" data-level="l1">
                     <div class="badge-header">
-                        <div class="badge-icon"></div>
+                        <div class="badge-icon">👑</div>
                         <span class="badge-type foundational">L1 Foundation</span>
                     </div>
                     <div class="badge-title">Leadership Foundational</div>
@@ -1914,7 +1917,7 @@
 
                 <div class="badge-card foundational" data-track="leadership" data-level="l2">
                     <div class="badge-header">
-                        <div class="badge-icon"></div>
+                        <div class="badge-icon">👑</div>
                         <span class="badge-type foundational">L2 Skill Builder</span>
                     </div>
                     <div class="badge-title">Leadership Proficient</div>
@@ -1928,7 +1931,7 @@
 
                 <div class="badge-card foundational" data-track="leadership" data-level="l3">
                     <div class="badge-header">
-                        <div class="badge-icon"></div>
+                        <div class="badge-icon">👑</div>
                         <span class="badge-type foundational">L3 Proficient</span>
                     </div>
                     <div class="badge-title">Leadership Skill Builder</div>
@@ -1942,7 +1945,7 @@
 
                 <div class="badge-card foundational" data-track="leadership" data-level="l4">
                     <div class="badge-header">
-                        <div class="badge-icon"></div>
+                        <div class="badge-icon">👑</div>
                         <span class="badge-type foundational">L4 Advanced</span>
                     </div>
                     <div class="badge-title">Leadership Advanced</div>
@@ -1956,7 +1959,7 @@
 
                 <div class="badge-card foundational" data-track="leadership" data-level="l5">
                     <div class="badge-header">
-                        <div class="badge-icon"></div>
+                        <div class="badge-icon">👑</div>
                         <span class="badge-type foundational">L5 Elevator</span>
                     </div>
                     <div class="badge-title">Leadership Elevator</div>
@@ -2067,7 +2070,7 @@
 
                 <div class="badge-card milestone" data-category="program">
                     <div class="badge-header">
-                        <div class="badge-icon"></div>
+                        <div class="badge-icon">📈</div>
                         <span class="badge-type milestone">Program</span>
                     </div>
                     <div class="badge-title">Sophomore Success Achiever Award</div>
@@ -2264,7 +2267,7 @@
 
                 <div class="badge-card milestone" data-category="experience">
                     <div class="badge-header">
-                        <div class="badge-icon"></div>
+                        <div class="badge-icon">💼</div>
                         <span class="badge-type milestone">Experience</span>
                     </div>
                     <div class="badge-title">Entrepreneurship Champion</div>
@@ -2290,7 +2293,7 @@
 
                 <div class="badge-card milestone" data-category="skills">
                     <div class="badge-header">
-                        <div class="badge-icon"></div>
+                        <div class="badge-icon">🔄</div>
                         <span class="badge-type milestone">Skills</span>
                     </div>
                     <div class="badge-title">Cross-Domain Elevator</div>
@@ -2342,7 +2345,7 @@
 
                 <div class="badge-card milestone" data-category="skills">
                     <div class="badge-header">
-                        <div class="badge-icon"></div>
+                        <div class="badge-icon">💻</div>
                         <span class="badge-type milestone">Skills</span>
                     </div>
                     <div class="badge-title">Technology Pioneer</div>
@@ -5299,7 +5302,7 @@
                                 <span style="font-weight: 500;">P21 Framework</span>
                                 <span style="font-weight: 600; color: #166534;">95%</span>
                             </div>
-                            <div style="height: 20px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                            <div style="height: 16px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
                                 <div style="width: 95%; height: 100%; background: #166534; border-radius: 6px;"></div>
                             </div>
                         </div>
@@ -5308,8 +5311,8 @@
                                 <span style="font-weight: 500;">NACE Competencies</span>
                                 <span style="font-weight: 600; color: #1E40AF;">92%</span>
                             </div>
-                            <div style="height: 20px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
-                                <div style="width: 92%; height: 100%; background: linear-gradient(90deg, #2196F3, #1E40AF); border-radius: 6px;"></div>
+                            <div style="height: 16px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 92%; height: 100%; background: #1E40AF; border-radius: 6px;"></div>
                             </div>
                         </div>
                         <div>
@@ -5317,8 +5320,26 @@
                                 <span style="font-weight: 500;">WEF Future Skills 2030</span>
                                 <span style="font-weight: 600; color: #6B21A8;">88%</span>
                             </div>
-                            <div style="height: 20px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
-                                <div style="width: 88%; height: 100%; background: linear-gradient(90deg, #9C27B0, #6B21A8); border-radius: 6px;"></div>
+                            <div style="height: 16px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 88%; height: 100%; background: #6B21A8; border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500;">O*NET Skills Framework</span>
+                                <span style="font-weight: 600; color: #0891B2;">85%</span>
+                            </div>
+                            <div style="height: 16px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 85%; height: 100%; background: #0891B2; border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500;">AAC&U Essential Outcomes</span>
+                                <span style="font-weight: 600; color: #DC2626;">82%</span>
+                            </div>
+                            <div style="height: 16px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 82%; height: 100%; background: #DC2626; border-radius: 6px;"></div>
                             </div>
                         </div>
                         <div>
@@ -5326,8 +5347,17 @@
                                 <span style="font-weight: 500;">CASEL SEL Framework</span>
                                 <span style="font-weight: 600; color: #C2410C;">78%</span>
                             </div>
-                            <div style="height: 20px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                            <div style="height: 16px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
                                 <div style="width: 78%; height: 100%; background: #C2410C; border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span style="font-weight: 500;">Employability Skills (ESF)</span>
+                                <span style="font-weight: 600; color: #059669;">75%</span>
+                            </div>
+                            <div style="height: 16px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
+                                <div style="width: 75%; height: 100%; background: #059669; border-radius: 6px;"></div>
                             </div>
                         </div>
                     </div>
