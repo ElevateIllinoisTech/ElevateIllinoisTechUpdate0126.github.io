@@ -281,6 +281,7 @@
 
         /* Main Content */
         .main-content {
+            overflow-x: hidden;
             max-width: 1400px;
             margin: 0 auto;
             padding: var(--spacing-xl);
@@ -288,6 +289,7 @@
 
         /* Sections */
         .section {
+            overflow-x: hidden;
             display: none;
             animation: fadeIn 0.3s ease;
         }
@@ -921,6 +923,7 @@
             grid-template-columns: 1fr 1fr;
             gap: var(--spacing-lg);
             margin-bottom: var(--spacing-xl);
+            align-items: stretch;
         }
 
         .metrics-card {
@@ -967,7 +970,7 @@
 
         .comparison-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: var(--spacing-md);
         }
 
@@ -1376,6 +1379,7 @@
 
         @media (max-width: 576px) {
             .main-content {
+            overflow-x: hidden;
                 padding: var(--spacing-md);
             }
             .header {
@@ -1406,6 +1410,7 @@
                 display: none;
             }
             .section {
+            overflow-x: hidden;
                 display: block !important;
                 page-break-inside: avoid;
                 margin-bottom: 2rem;
@@ -4759,7 +4764,7 @@
                 
                 <div style="display: flex; gap: var(--spacing-xl); flex-wrap: wrap;">
                     <!-- Line Chart Area -->
-                    <div style="flex: 2; min-width: 400px;">
+                    <div style="flex: 2; min-width: 280px; overflow-x: auto;">
                         <svg viewBox="0 0 600 250" style="width: 100%; height: auto;">
                             <!-- Grid lines -->
                             <line x1="50" y1="30" x2="50" y2="200" stroke="#e0e0e0" stroke-width="1"/>
@@ -4842,7 +4847,7 @@
             </div>
 
             <!-- NEW: Student Engagement Funnel -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
                 
                 <!-- Engagement Funnel -->
                 <div style="background: var(--iit-white); border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
@@ -4950,7 +4955,7 @@
             </div>
 
             <!-- NEW: NACE Competency Distribution & School Breakdown -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
                 
                 <!-- NACE Competency Radar -->
                 <div style="background: var(--iit-white); border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
@@ -5088,7 +5093,7 @@
             </div>
 
             <!-- Row 1: Enrollment & Badge Distribution (Original) -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
                 
                 <!-- Enrollment by Year -->
                 <div style="background: var(--iit-white); border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
@@ -5122,29 +5127,29 @@
                 </div>
 
                 <!-- International Student Enrollment -->
-                <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm); border-left: 5px solid #1E40AF;">
+                <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF; overflow: hidden;">
                     <h3 style="color: #1E40AF; margin-bottom: var(--spacing-md); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);">
                         <span style="width: 6px; height: 20px; background: #1E40AF; border-radius: 2px;"></span>
                         International Student Enrollment
                     </h3>
                     <p style="color: #424242; margin-bottom: var(--spacing-lg); font-size: 0.85rem;">International students participating in the Elevate program</p>
                     
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md);">
-                        <div style="background: white; border-radius: 4px; padding: var(--spacing-md); text-align: center; box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);">
-                            <div style="font-size: 2rem; font-weight: 600; color: #1E40AF; line-height: 1;">27</div>
-                            <div style="font-size: 0.8rem; color: #424242; margin-top: 4px; font-weight: 500;">Year 1</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md);">
+                        <div style="flex: 1; min-width: 80px; max-width: 120px; background: white; border-radius: 4px; padding: var(--spacing-md); text-align: center; box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);">
+                            <div style="font-size: 1.75rem; font-weight: 600; color: #1E40AF; line-height: 1;">27</div>
+                            <div style="font-size: 0.75rem; color: #424242; margin-top: 4px; font-weight: 500;">Year 1</div>
                         </div>
-                        <div style="background: white; border-radius: 4px; padding: var(--spacing-md); text-align: center; box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);">
-                            <div style="font-size: 2rem; font-weight: 600; color: #1E40AF; line-height: 1;">14</div>
-                            <div style="font-size: 0.8rem; color: #424242; margin-top: 4px; font-weight: 500;">Year 2</div>
+                        <div style="flex: 1; min-width: 80px; max-width: 120px; background: white; border-radius: 4px; padding: var(--spacing-md); text-align: center; box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);">
+                            <div style="font-size: 1.75rem; font-weight: 600; color: #1E40AF; line-height: 1;">14</div>
+                            <div style="font-size: 0.75rem; color: #424242; margin-top: 4px; font-weight: 500;">Year 2</div>
                         </div>
-                        <div style="background: white; border-radius: 4px; padding: var(--spacing-md); text-align: center; box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);">
-                            <div style="font-size: 2rem; font-weight: 600; color: #1E40AF; line-height: 1;">41</div>
-                            <div style="font-size: 0.8rem; color: #424242; margin-top: 4px; font-weight: 500;">Total</div>
+                        <div style="flex: 1; min-width: 80px; max-width: 120px; background: white; border-radius: 4px; padding: var(--spacing-md); text-align: center; box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);">
+                            <div style="font-size: 1.75rem; font-weight: 600; color: #1E40AF; line-height: 1;">41</div>
+                            <div style="font-size: 0.75rem; color: #424242; margin-top: 4px; font-weight: 500;">Total</div>
                         </div>
-                        <div style="background: white; border-radius: 4px; padding: var(--spacing-md); text-align: center; box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);">
-                            <div style="font-size: 2rem; font-weight: 600; color: #1E40AF; line-height: 1;">~10%</div>
-                            <div style="font-size: 0.8rem; color: #424242; margin-top: 4px; font-weight: 500;">of Enrollment</div>
+                        <div style="flex: 1; min-width: 80px; max-width: 120px; background: white; border-radius: 4px; padding: var(--spacing-md); text-align: center; box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);">
+                            <div style="font-size: 1.25rem; font-weight: 600; color: #1E40AF; line-height: 1;">~10%</div>
+                            <div style="font-size: 0.75rem; color: #424242; margin-top: 4px; font-weight: 500;">of Total</div>
                         </div>
                     </div>
                     
@@ -5154,14 +5159,14 @@
                 </div>
 
                 <!-- Commuter vs Residential Student Breakdown -->
-                <div style="background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm); border-left: 5px solid #C2410C;">
+                <div style="background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm); border-left: 4px solid #C2410C; overflow: hidden;">
                     <h3 style="color: #C2410C; margin-bottom: var(--spacing-md); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);">
                         <span style="width: 6px; height: 20px; background: #C2410C; border-radius: 2px;"></span>
                         Commuter vs Residential Students
                     </h3>
                     <p style="color: #424242; margin-bottom: var(--spacing-lg); font-size: 0.85rem;">Housing status breakdown by program year</p>
                     
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); max-width: 700px;">
                         <!-- Year 1 -->
                         <div style="background: white; border-radius: 4px; padding: var(--spacing-lg); box-shadow: 0 2px 8px rgba(230, 81, 0, 0.12);">
                             <div style="font-weight: 600; color: #166534; margin-bottom: var(--spacing-md); font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
@@ -5282,7 +5287,7 @@
             </div>
 
             <!-- Row 2: Framework Alignment & Badge Categories -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
                 
                 <!-- Framework Alignment -->
                 <div style="background: var(--iit-white); border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
@@ -5384,7 +5389,7 @@
             </div>
 
             <!-- Row 3: School Pilots & Badge Tier Distribution -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
                 
                 <!-- School Pilots Progress -->
                 <div style="background: var(--iit-white); border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm);">
@@ -5620,7 +5625,7 @@
 
             <!-- Enrollment & Check-In Grid -->
             <div class="metrics-grid">
-                <div class="metrics-card">
+                <div class="metrics-card" style="display: flex; flex-direction: column;">
                     <div class="metrics-card-header">
                         <h3 class="metrics-card-title">Enrollment Progress</h3>
                         <span class="metrics-badge">Semester Comparison</span>
@@ -5665,106 +5670,91 @@
                             </div>
                         </div>
                     </div>
-                    <div class="callout-box">
+                    
+                    <!-- Growth Metrics -->
+                    <div style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: #F0FDF4; border-radius: 6px; border: 1px solid #BBF7D0;">
+                        <div style="font-weight: 600; color: #166534; margin-bottom: var(--spacing-sm); font-size: 0.85rem;">Growth Since Launch</div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md);">
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #166534;">+35%</div>
+                                <div style="font-size: 0.7rem; color: #4B5563;">Enrollment Growth</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #166534;">+52%</div>
+                                <div style="font-size: 0.7rem; color: #4B5563;">Check-In Growth</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="callout-box" style="margin-top: auto;">
                         <div class="callout-title">•Direct Outreach Success</div>
                         <div class="callout-text">Final enrollment push (Nov 14–21) reached 750+ students via Teams. Personalized outreach enrolled 40+ students in one week—validating direct communication as a core strategy.</div>
                     </div>
                 </div>
 
                 <!-- Student Demographics Card -->
-                <div class="metrics-card">
+                <div class="metrics-card" style="display: flex; flex-direction: column;">
                     <div class="metrics-card-header">
                         <h3 class="metrics-card-title">Student Demographics</h3>
                         <span class="metrics-badge">International & Housing Status</span>
                     </div>
                     
-                    <!-- International Students -->
-                    <div style="margin-bottom: var(--spacing-lg);">
-                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--spacing-md);">
-                            <span style="width: 8px; height: 8px; background: #1E40AF; border-radius: 2px; display: inline-block;"></span>
-                            <span style="font-weight: 600; color: #1E40AF;">International Students</span>
-                        </div>
-                        <div class="comparison-grid">
-                            <div class="comparison-card" style="background: #F8FAFC;">
-                                <div class="comparison-header" style="color: #1E40AF;">Year 1</div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">International</span>
-                                    <span class="comparison-value" style="color: #1E40AF;">27</span>
-                                </div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">% of Year 1</span>
-                                    <span class="comparison-value" style="color: #1E40AF;">9.8%</span>
-                                </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg);">
+                        <!-- International Students -->
+                        <div style="background: #F8FAFC; border-radius: 6px; padding: var(--spacing-lg); border: 1px solid #E5E7EB;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-sm); border-bottom: 2px solid #1E40AF;">
+                                <span style="width: 8px; height: 8px; background: #1E40AF; border-radius: 2px; display: inline-block;"></span>
+                                <span style="font-weight: 600; color: #1E40AF;">International Students</span>
                             </div>
-                            <div class="comparison-card" style="background: #F8FAFC;">
-                                <div class="comparison-header" style="color: #1E40AF;">Year 2</div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">International</span>
-                                    <span class="comparison-value" style="color: #1E40AF;">14</span>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-sm); text-align: center;">
+                                <div style="padding: var(--spacing-sm);">
+                                    <div style="font-size: 1.5rem; font-weight: 600; color: #1E40AF;">27</div>
+                                    <div style="font-size: 0.7rem; color: #4B5563;">Year 1 (9.8%)</div>
                                 </div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">% of Year 2</span>
-                                    <span class="comparison-value" style="color: #1E40AF;">11.7%</span>
+                                <div style="padding: var(--spacing-sm);">
+                                    <div style="font-size: 1.5rem; font-weight: 600; color: #1E40AF;">14</div>
+                                    <div style="font-size: 0.7rem; color: #4B5563;">Year 2 (11.7%)</div>
                                 </div>
-                            </div>
-                            <div class="comparison-card highlight" style="background: #EFF6FF;">
-                                <div class="comparison-header" style="color: #0D47A1;">Total</div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">International</span>
-                                    <span class="comparison-value" style="color: #0D47A1; font-size: 1.3rem;">41</span>
-                                </div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">% of Program</span>
-                                    <span class="comparison-value" style="color: #0D47A1;">~10%</span>
+                                <div style="padding: var(--spacing-sm); background: #EFF6FF; border-radius: 4px;">
+                                    <div style="font-size: 1.5rem; font-weight: 600; color: #0D47A1;">41</div>
+                                    <div style="font-size: 0.7rem; color: #4B5563;">Total (~10%)</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Commuter vs Residential -->
-                    <div>
-                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--spacing-md);">
-                            <span style="width: 8px; height: 8px; background: #C2410C; border-radius: 2px; display: inline-block;"></span>
-                            <span style="font-weight: 600; color: #C2410C;">Commuter vs Residential</span>
-                        </div>
-                        <div class="comparison-grid">
-                            <div class="comparison-card" style="background: #F8FAFC;">
-                                <div class="comparison-header" style="color: #166534;">Year 1 (276)</div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">Residential</span>
-                                    <span class="comparison-value" style="color: #166534;">270 (97.8%)</span>
-                                </div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">Commuter</span>
-                                    <span class="comparison-value" style="color: #C2410C;">6 (2.2%)</span>
-                                </div>
+                        
+                        <!-- Commuter vs Residential -->
+                        <div style="background: #FFFBF5; border-radius: 6px; padding: var(--spacing-lg); border: 1px solid #FED7AA;">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-sm); border-bottom: 2px solid #C2410C;">
+                                <span style="width: 8px; height: 8px; background: #C2410C; border-radius: 2px; display: inline-block;"></span>
+                                <span style="font-weight: 600; color: #C2410C;">Commuter vs Residential</span>
                             </div>
-                            <div class="comparison-card" style="background: #FFFBF5;">
-                                <div class="comparison-header" style="color: #C2410C;">Year 2 (120)</div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">Residential</span>
-                                    <span class="comparison-value" style="color: #166534;">2 (1.7%)</span>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-sm); text-align: center;">
+                                <div style="padding: var(--spacing-sm);">
+                                    <div style="font-size: 0.7rem; color: #4B5563; margin-bottom: 4px;">Year 1 (276)</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600; color: #166534;">270</div>
+                                    <div style="font-size: 0.65rem; color: #4B5563;">Residential</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600; color: #C2410C; margin-top: 4px;">6</div>
+                                    <div style="font-size: 0.65rem; color: #4B5563;">Commuter</div>
                                 </div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">Commuter</span>
-                                    <span class="comparison-value" style="color: #C2410C;">118 (98.3%)</span>
+                                <div style="padding: var(--spacing-sm);">
+                                    <div style="font-size: 0.7rem; color: #4B5563; margin-bottom: 4px;">Year 2 (120)</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600; color: #166534;">2</div>
+                                    <div style="font-size: 0.65rem; color: #4B5563;">Residential</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600; color: #C2410C; margin-top: 4px;">118</div>
+                                    <div style="font-size: 0.65rem; color: #4B5563;">Commuter</div>
                                 </div>
-                            </div>
-                            <div class="comparison-card highlight" style="background: #FEF2F2;">
-                                <div class="comparison-header" style="color: #C2410C;">Total (396)</div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">Residential</span>
-                                    <span class="comparison-value" style="color: #166534;">272 (68.7%)</span>
-                                </div>
-                                <div class="comparison-row">
-                                    <span style="color: #374151;">Commuter</span>
-                                    <span class="comparison-value" style="color: #C2410C;">124 (31.3%)</span>
+                                <div style="padding: var(--spacing-sm); background: #FEF2F2; border-radius: 4px;">
+                                    <div style="font-size: 0.7rem; color: #4B5563; margin-bottom: 4px;">Total (396)</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600; color: #166534;">272</div>
+                                    <div style="font-size: 0.65rem; color: #4B5563;">Residential (68.7%)</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600; color: #C2410C; margin-top: 4px;">124</div>
+                                    <div style="font-size: 0.65rem; color: #4B5563;">Commuter (31.3%)</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="callout-box" style="margin-top: var(--spacing-lg); background: #FFFBF5; border-color: #C2410C;">
+                    <div class="callout-box" style="margin-top: auto; background: #FFFBF5; border-color: #C2410C;">
                         <div class="callout-title" style="color: #C2410C;">→ Critical Insight: Commuter Transition</div>
                         <div class="callout-text">Year 1 students are 97.8% residential, while Year 2 students are 98.3% commuter—a dramatic shift. This data validates Priority 02: flexible virtual check-ins and targeted commuter support are essential for Year 2 retention and engagement.</div>
                     </div>
