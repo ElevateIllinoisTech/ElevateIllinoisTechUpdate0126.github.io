@@ -37,9 +37,9 @@
             --tier-l5: #F59E0B;
             
             /* Status Colors - Professional */
-            --color-success: #047857;
+            --color-success: #166534;
             --color-success-light: #ECFDF5;
-            --color-warning: #B45309;
+            --color-warning: #C2410C;
             --color-warning-light: #FFFBEB;
             --color-info: #0369A1;
             --color-info-light: #F0F9FF;
@@ -445,7 +445,7 @@
 
         .tier-card.l1 { background: linear-gradient(135deg, var(--tier-l1), #66BB6A); }
         .tier-card.l2 { background: linear-gradient(135deg, var(--tier-l2), #43A047); }
-        .tier-card.l3 { background: linear-gradient(135deg, var(--tier-l3), #1D4ED8); }
+        .tier-card.l3 { background: linear-gradient(135deg, var(--tier-l3), #1E40AF); }
         .tier-card.l4 { background: linear-gradient(135deg, var(--tier-l4), #6B21A8); }
         .tier-card.l5 { background: linear-gradient(135deg, var(--tier-l5), #F57C00); }
 
@@ -979,9 +979,8 @@
         }
 
         .comparison-card.highlight {
-            background: linear-gradient(135deg, var(--iit-scarlet) 0%, var(--iit-scarlet-dark) 100%);
-            border: none;
-            color: var(--iit-white);
+            border: 2px solid var(--iit-scarlet);
+            background: #FEF2F2;
         }
 
         .comparison-header {
@@ -994,10 +993,12 @@
         }
 
         .comparison-card.highlight .comparison-header {
-            color: rgba(255,255,255,0.8);
+            color: var(--iit-scarlet);
+            font-weight: 700;
         }
 
         .comparison-row {
+            color: #374151;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1006,7 +1007,8 @@
         }
 
         .comparison-card.highlight .comparison-row {
-            border-color: rgba(255,255,255,0.2);
+            color: #374151;
+            border-color: var(--iit-gray-medium);
         }
 
         .comparison-row:last-child {
@@ -1016,6 +1018,7 @@
         .comparison-value {
             font-weight: 600;
             font-size: 1.1rem;
+            color: #1F2937;
         }
 
         .growth-badge {
@@ -1627,7 +1630,7 @@
                     </ul>
                 </div>
                 <div class="framework-card">
-                    <h3>🌍WEF Future of Jobs 2030</h3>
+                    <h3>WEF Future of Jobs 2030</h3>
                     <p style="font-size: 0.9rem; color: var(--iit-gray-dark); margin-bottom: var(--spacing-md);">World Economic Forum top skills for the future workplace</p>
                     <ul style="font-size: 0.85rem; color: var(--iit-gray-dark); list-style: none;">
                         <li>• Analytical Thinking</li>
@@ -2178,7 +2181,7 @@
                 <!-- Experience Badges -->
                 <div class="badge-card milestone" data-category="experience">
                     <div class="badge-header">
-                        <div class="badge-icon">🌍</div>
+                        <div class="badge-icon">●</div>
                         <span class="badge-type milestone">Experience</span>
                     </div>
                     <div class="badge-title">Global Citizen</div>
@@ -2774,7 +2777,7 @@
 
                         <!-- INTERNATIONAL & GLOBAL -->
                         <tr style="background: #f8f9fa;">
-                            <td colspan="6" style="font-weight: 600; color: var(--iit-scarlet); padding: 12px;">🌍International & Global (5)</td>
+                            <td colspan="6" style="font-weight: 600; color: var(--iit-scarlet); padding: 12px;">International & Global (5)</td>
                         </tr>
                         <tr>
                             <td><strong>Global Citizen</strong></td>
@@ -3108,24 +3111,24 @@
                 <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); align-items: center;">
                     <div style="display: flex; align-items: center; gap: 6px;">
                         <span style="padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #B71C1C; color: white;">NACE</span>
-                        <span style="font-size: 0.75rem; color: #666;">Career Competencies</span>
+                        <span style="font-size: 0.75rem; color: #4B5563;">Career Competencies</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 6px;">
                         <span style="padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #1E40AF; color: white;">P21</span>
-                        <span style="font-size: 0.75rem; color: #666;">21st Century Skills</span>
+                        <span style="font-size: 0.75rem; color: #4B5563;">21st Century Skills</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 6px;">
                         <span style="padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #166534; color: white;">WEF</span>
-                        <span style="font-size: 0.75rem; color: #666;">Future of Jobs 2030</span>
+                        <span style="font-size: 0.75rem; color: #4B5563;">Future of Jobs 2030</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 6px;">
                         <span style="padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #6B21A8; color: white;">CASEL</span>
-                        <span style="font-size: 0.75rem; color: #666;">Social-Emotional</span>
+                        <span style="font-size: 0.75rem; color: #4B5563;">Social-Emotional</span>
                     </div>
                 </div>
-                <div style="font-size: 0.7rem; color: #999; margin-left: auto;">
+                <div style="font-size: 0.7rem; color: #6B7280; margin-left: auto;">
                     <span style="padding: 2px 6px; border-radius: 2px; background: #333; color: white; margin-right: 4px;">Filled</span> = Primary
-                    <span style="padding: 2px 6px; border-radius: 3px; border: 1px solid #ccc; color: #666; margin-left: 8px; margin-right: 4px;">Outline</span> = Secondary
+                    <span style="padding: 2px 6px; border-radius: 3px; border: 1px solid #ccc; color: #4B5563; margin-left: 8px; margin-right: 4px;">Outline</span> = Secondary
                 </div>
             </div>
 
@@ -3141,28 +3144,28 @@
                 </div>
                 
                 <div style="background: #FAFAFA; border: 1px solid #E0E0E0; border-top: none; border-radius: 0 0 6px 6px; padding: var(--spacing-xl);">
-                    <h4 style="color: #991B1B; margin-bottom: var(--spacing-md); font-size: 1rem; border-bottom: 2px solid #991B1B; padding-bottom: 8px; display: flex; align-items: center; gap: 10px;">
-                        <span style="color: #991B1B; font-weight: 600;">✓</span>
+                    <h4 style="color: #B71C1C; margin-bottom: var(--spacing-md); font-size: 1rem; border-bottom: 2px solid #B71C1C; padding-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: #B71C1C; font-weight: 600;">✓</span>
                         Required Activities
                     </h4>
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-xl);">
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 500; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">First-Year Success Coach Check-in <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 500; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">First-Year Success Coach Check-in <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">First-Year Foundation Builder</span>
                             </div>
                             <div style="display: flex; flex-wrap: wrap; gap: 4px; padding-top: 8px; border-top: 1px solid #f0f0f0;">
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #1E40AF; color: white;">P21</span>
-                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #666; border: 1px solid #ccc;">WEF</span>
+                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #4B5563; border: 1px solid #ccc;">WEF</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #6B21A8; color: white;">CASEL</span>
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Resume Development with Career Services <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Resume Development with Career Services <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #FFFBF5; color: #C2410C;">Communications L1</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #166534;">Critical Thinking L1</span>
@@ -3171,28 +3174,28 @@
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #1E40AF; color: white;">P21</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #166534; color: white;">WEF</span>
-                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #666; border: 1px solid #ccc;">CASEL</span>
+                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #4B5563; border: 1px solid #ccc;">CASEL</span>
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Elevate Mentorship Programs <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Elevate Mentorship Programs <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Professional Relationship Builder</span>
-                                <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #FFEBEE; color: #991B1B;">Collaboration L1</span>
+                                <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #FFEBEE; color: #B71C1C;">Collaboration L1</span>
                             </div>
                             <div style="display: flex; flex-wrap: wrap; gap: 4px; padding-top: 8px; border-top: 1px solid #f0f0f0;">
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #1E40AF; color: white;">P21</span>
-                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #666; border: 1px solid #ccc;">WEF</span>
+                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #4B5563; border: 1px solid #ccc;">WEF</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #6B21A8; color: white;">CASEL</span>
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Find Your Flock - Student Org <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Find Your Flock - Student Org <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
-                                <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #FFEBEE; color: #991B1B;">Collaboration L1</span>
+                                <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #FFEBEE; color: #B71C1C;">Collaboration L1</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Initiative Taker</span>
                             </div>
                             <div style="display: flex; flex-wrap: wrap; gap: 4px; padding-top: 8px; border-top: 1px solid #f0f0f0;">
@@ -3203,8 +3206,8 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">First-Year Elevate Experience (3 Hrs) <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">First-Year Elevate Experience (3 Hrs) <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">First-Year Foundation Builder</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #FFFBF5; color: #C2410C;">Communications L1</span>
@@ -3212,13 +3215,13 @@
                             <div style="display: flex; flex-wrap: wrap; gap: 4px; padding-top: 8px; border-top: 1px solid #f0f0f0;">
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #1E40AF; color: white;">P21</span>
-                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #666; border: 1px solid #ccc;">WEF</span>
+                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #4B5563; border: 1px solid #ccc;">WEF</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #6B21A8; color: white;">CASEL</span>
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Chicago Adventures - Community <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Chicago Adventures - Community <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Global Citizen</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #166534;">Critical Thinking L1</span>
@@ -3239,7 +3242,7 @@
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: var(--spacing-md);">
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">IPRO Innovation Day Exploration</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #166534;">Critical Thinking L2</span>
@@ -3249,11 +3252,11 @@
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #1E40AF; color: white;">P21</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #166534; color: white;">WEF</span>
-                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #666; border: 1px solid #ccc;">CASEL</span>
+                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #4B5563; border: 1px solid #ccc;">CASEL</span>
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">ELM Leadership Program</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F3E5F5; color: #6B21A8;">Leadership L2</span>
@@ -3267,21 +3270,21 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Community Connections - Service Day</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
-                                <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #FFEBEE; color: #991B1B;">Collaboration L2</span>
+                                <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #FFEBEE; color: #B71C1C;">Collaboration L2</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Community Impact Leader</span>
                             </div>
                             <div style="display: flex; flex-wrap: wrap; gap: 4px; padding-top: 8px; border-top: 1px solid #f0f0f0;">
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #1E40AF; color: white;">P21</span>
-                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #666; border: 1px solid #ccc;">WEF</span>
+                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #4B5563; border: 1px solid #ccc;">WEF</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #6B21A8; color: white;">CASEL</span>
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">LinkedIn Profile Creation</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #1E40AF;">Digital Literacy L1</span>
@@ -3291,11 +3294,11 @@
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #1E40AF; color: white;">P21</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #166534; color: white;">WEF</span>
-                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #666; border: 1px solid #ccc;">CASEL</span>
+                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #4B5563; border: 1px solid #ccc;">CASEL</span>
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Career Fair Prep Squad</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #FFFBF5; color: #C2410C;">Communications L2</span>
@@ -3309,11 +3312,11 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Hawks in Action - Athletics</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F3E5F5; color: #6B21A8;">Leadership L1</span>
-                                <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #FFEBEE; color: #991B1B;">Collaboration L2</span>
+                                <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #FFEBEE; color: #B71C1C;">Collaboration L2</span>
                             </div>
                             <div style="display: flex; flex-wrap: wrap; gap: 4px; padding-top: 8px; border-top: 1px solid #f0f0f0;">
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
@@ -3323,7 +3326,7 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Hawk Ambassador Program</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F3E5F5; color: #6B21A8;">Leadership L2</span>
@@ -3337,7 +3340,7 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">AWS Cloud Skills & Certifications</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #1E40AF;">Digital Literacy L3</span>
@@ -3347,11 +3350,11 @@
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #1E40AF; color: white;">P21</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #166534; color: white;">WEF</span>
-                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #666; border: 1px solid #ccc;">CASEL</span>
+                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #4B5563; border: 1px solid #ccc;">CASEL</span>
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Globe Trotter - International Immersion</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Global Citizen</span>
@@ -3365,20 +3368,20 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Hope Chicago & Chicago Difference</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Persistence Champion</span>
                             </div>
                             <div style="display: flex; flex-wrap: wrap; gap: 4px; padding-top: 8px; border-top: 1px solid #f0f0f0;">
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
-                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #666; border: 1px solid #ccc;">P21</span>
-                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #666; border: 1px solid #ccc;">WEF</span>
+                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #4B5563; border: 1px solid #ccc;">P21</span>
+                                <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: transparent; color: #4B5563; border: 1px solid #ccc;">WEF</span>
                                 <span style="padding: 2px 6px; border-radius: 2px; font-size: 0.6rem; font-weight: 500; background: #6B21A8; color: white;">CASEL</span>
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Elevator Pitch - Wild Card</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #FFFBF5; color: #C2410C;">Maps to experience (L1-L3)</span>
@@ -3391,7 +3394,7 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Flight Plan - Custom Experience</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #166534;">Maps to experience (L1-L3)</span>
@@ -3419,15 +3422,15 @@
                 </div>
                 
                 <div style="background: #FAFAFA; border: 1px solid #E0E0E0; border-top: none; border-radius: 0 0 6px 6px; padding: var(--spacing-xl);">
-                    <h4 style="color: #991B1B; margin-bottom: var(--spacing-md); font-size: 1rem; border-bottom: 2px solid #991B1B; padding-bottom: 8px; display: flex; align-items: center; gap: 10px;">
-                        <span style="color: #991B1B; font-weight: 600;">✓</span>
+                    <h4 style="color: #B71C1C; margin-bottom: var(--spacing-md); font-size: 1rem; border-bottom: 2px solid #B71C1C; padding-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+                        <span style="color: #B71C1C; font-weight: 600;">✓</span>
                         Required Activities
                     </h4>
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-xl);">
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Sophomore Experience (10+ Hours) <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Sophomore Experience (10+ Hours) <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Experience Collector</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #166534;">Relevant Skill (L2-L3)</span>
@@ -3440,8 +3443,8 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Handshake Profile Optimization <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Handshake Profile Optimization <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #1E40AF;">Digital Literacy L2</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Job Search Strategist</span>
@@ -3454,8 +3457,8 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Sophomore Success Coach Check-In <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Sophomore Success Coach Check-In <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Sophomore Success Achiever</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Self-Awareness Developer</span>
@@ -3468,8 +3471,8 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">LinkedIn Profile (Required Y2) <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">LinkedIn Profile (Required Y2) <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #1E40AF;">Digital Literacy L2</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #FFFBF5; color: #C2410C;">Communications L2</span>
@@ -3482,8 +3485,8 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Resume Review (Y2 Required) <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Resume Review (Y2 Required) <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #FFFBF5; color: #C2410C;">Communications L3</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #166534;">Critical Thinking L2</span>
@@ -3496,8 +3499,8 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Professional Development Workshop <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Professional Development Workshop <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #166534;">Critical Thinking L2</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #FFFBF5; color: #C2410C;">Communications L2</span>
@@ -3510,8 +3513,8 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #991B1B;">
-                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Leadership Academy (6 Workshops) <span style="background: #FFEBEE; color: #991B1B; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #B71C1C;">
+                            <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Leadership Academy (6 Workshops) <span style="background: #FFEBEE; color: #B71C1C; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; margin-left: 4px;">REQUIRED</span></div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F3E5F5; color: #6B21A8;">Leadership L3</span>
                                 <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #F3E5F5; color: #6B21A8;">Leadership L4</span>
@@ -3526,7 +3529,7 @@
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: var(--spacing-md);">
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 500; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Student Organization Leadership</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F3E5F5; color: #6B21A8;">Leadership L3</span>
@@ -3540,7 +3543,7 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Industry Research Deep Dive</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #166534;">Critical Thinking L3</span>
@@ -3554,7 +3557,7 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Mock Interview Session</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #FFFBF5; color: #C2410C;">Communications L3</span>
@@ -3568,7 +3571,7 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Industry Networking Event</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Professional Relationship Builder</span>
@@ -3582,7 +3585,7 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Informational Interviews (2)</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Professional Relationship Builder</span>
@@ -3596,7 +3599,7 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Professional Portfolio Development</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #1E40AF;">Digital Literacy L3</span>
@@ -3610,7 +3613,7 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">AWS Cloud Skills (Y2)</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F8FAFC; color: #1E40AF;">Digital Literacy L4</span>
@@ -3624,7 +3627,7 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">International Cultural Immersion (Y2)</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #E0F2F1; color: #0D5450;">Global Citizen</span>
@@ -3638,11 +3641,11 @@
                             </div>
                         </div>
                         
-                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1D4ED8;">
+                        <div style="background: white; border-radius: 4px; padding: 16px; box-shadow: var(--shadow-sm); border-left: 4px solid #1E40AF;">
                             <div style="font-weight: 600; color: #212121; margin-bottom: 10px; font-size: 0.9rem;">Hawks in Action - Athletics (Y2)</div>
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
                                 <span style="padding: 4px 10px; border-radius: 2px; font-size: 0.75rem; font-weight: 500; background: #F3E5F5; color: #6B21A8;">Leadership L2</span>
-                                <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #FFEBEE; color: #991B1B;">Collaboration L3</span>
+                                <span style="padding: 4px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; background: #FFEBEE; color: #B71C1C;">Collaboration L3</span>
                             </div>
                             <div style="display: flex; flex-wrap: wrap; gap: 4px; padding-top: 8px; border-top: 1px solid #f0f0f0;">
                                 <span style="padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 500; background: #B71C1C; color: white;">NACE</span>
@@ -3785,9 +3788,9 @@
                             
                             <!-- COLLABORATION TRACK -->
                             <tr style="background: #FFEBEE;">
-                                <td colspan="3" style="font-weight: 600; color: #991B1B; padding: 12px;">
+                                <td colspan="3" style="font-weight: 600; color: #B71C1C; padding: 12px;">
                                     <span style="display: inline-flex; align-items: center; gap: 8px;">
-                                        <span style="width: 28px; height: 28px; background: #991B1B; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem;">👥</span>
+                                        <span style="width: 28px; height: 28px; background: #B71C1C; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem;">👥</span>
                                         Collaboration Champion Track
                                     </span>
                                 </td>
@@ -4191,7 +4194,7 @@
 
                 <div class="activity-card">
                     <div class="activity-header">
-                        <div class="activity-title">🌍Globe Trotter - International Cultural Immersion</div>
+                        <div class="activity-title">Globe Trotter - International Cultural Immersion</div>
                         <span class="activity-type elective">ELECTIVE</span>
                     </div>
                     <div class="activity-description">1+ weeks abroad exploring culture. Study abroad, family trips, or solo adventures. Complete cultural challenges.</div>
@@ -4848,7 +4851,7 @@
                     <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
                         <!-- Stage 1: Awareness -->
                         <div style="width: 100%; max-width: 350px; height: 45px; background: linear-gradient(90deg, #E3F2FD, #BBDEFB); border-radius: 4px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--spacing-md);">
-                            <span style="font-weight: 600; color: #1E40AF;">👁  Awareness</span>
+                            <span style="font-weight: 600; color: #1E40AF;">Awareness</span>
                             <span style="font-weight: 600; color: #1E40AF;">1,170 students</span>
                         </div>
                         <div style="width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 12px solid #BBDEFB;"></div>
@@ -4876,8 +4879,8 @@
                         
                         <!-- Stage 5: Super Engaged (5+ badges) -->
                         <div style="width: 40%; max-width: 150px; height: 45px; background: linear-gradient(90deg, #FFEBEE, #EF9A9A); border-radius: 4px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--spacing-md);">
-                            <span style="font-weight: 600; color: #991B1B;">5+ Badges</span>
-                            <span style="font-weight: 600; color: #991B1B;">67 (16.9%)</span>
+                            <span style="font-weight: 600; color: #B71C1C;">5+ Badges</span>
+                            <span style="font-weight: 600; color: #B71C1C;">67 (16.9%)</span>
                         </div>
                     </div>
                     
@@ -4985,9 +4988,9 @@
                         <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
                             <span style="min-width: 180px; font-size: 0.9rem;">Leadership</span>
                             <div style="flex: 1; height: 24px; background: var(--iit-gray-light); border-radius: 4px; overflow: hidden;">
-                                <div style="width: 85%; height: 100%; background: linear-gradient(90deg, #F44336, #991B1B); border-radius: 4px;"></div>
+                                <div style="width: 85%; height: 100%; background: linear-gradient(90deg, #F44336, #B71C1C); border-radius: 4px;"></div>
                             </div>
-                            <span style="min-width: 40px; font-weight: 600; color: #991B1B;">85%</span>
+                            <span style="min-width: 40px; font-weight: 600; color: #B71C1C;">85%</span>
                         </div>
                         <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
                             <span style="min-width: 180px; font-size: 0.9rem;">Professionalism</span>
@@ -5037,7 +5040,7 @@
                                 <span style="font-weight: 600;">98 (24.7%)</span>
                             </div>
                             <div style="height: 28px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
-                                <div style="width: 24.7%; height: 100%; background: linear-gradient(90deg, #1E40AF, #1D4ED8); border-radius: 6px;"></div>
+                                <div style="width: 24.7%; height: 100%; background: linear-gradient(90deg, #1E40AF, #1E40AF); border-radius: 6px;"></div>
                             </div>
                         </div>
                         <div>
@@ -5078,7 +5081,7 @@
                         </div>
                     </div>
                     
-                    <div style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: #F8FAFC; border-radius: 4px; border-left: 4px solid #1D4ED8;">
+                    <div style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: #F8FAFC; border-radius: 4px; border-left: 4px solid #1E40AF;">
                         <div style="font-size: 0.85rem;">•<strong>Opportunity:</strong> Architecture (5.3%) and Design (3.0%) are underrepresented — consider targeted outreach</div>
                     </div>
                 </div>
@@ -5119,9 +5122,9 @@
                 </div>
 
                 <!-- International Student Enrollment -->
-                <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm); border-left: 5px solid #1D4ED8;">
+                <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm); border-left: 5px solid #1E40AF;">
                     <h3 style="color: #1E40AF; margin-bottom: var(--spacing-md); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);">
-                        <span style="width: 36px; height: 36px; background: #1E40AF; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem;">🌍</span>
+                        <span style="width: 6px; height: 20px; background: #1E40AF; border-radius: 2px;"></span>
                         International Student Enrollment
                     </h3>
                     <p style="color: #424242; margin-bottom: var(--spacing-lg); font-size: 0.85rem;">International students participating in the Elevate program</p>
@@ -5145,7 +5148,7 @@
                         </div>
                     </div>
                     
-                    <div style="background: white; border-radius: 6px; padding: 12px 14px; margin-top: var(--spacing-md); border-left: 3px solid #1D4ED8;">
+                    <div style="background: white; border-radius: 6px; padding: 12px 14px; margin-top: var(--spacing-md); border-left: 3px solid #1E40AF;">
                         <p style="font-size: 0.8rem; color: #424242; margin: 0;"><strong style="color: #1E40AF;">Note:</strong> International students benefit from career readiness programming that supports CPT/OPT requirements and global career development.</p>
                     </div>
                 </div>
@@ -5153,7 +5156,7 @@
                 <!-- Commuter vs Residential Student Breakdown -->
                 <div style="background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 6px; padding: var(--spacing-xl); box-shadow: var(--shadow-sm); border-left: 5px solid #C2410C;">
                     <h3 style="color: #C2410C; margin-bottom: var(--spacing-md); font-size: 1.1rem; display: flex; align-items: center; gap: var(--spacing-sm);">
-                        <span style="width: 36px; height: 36px; background: #C2410C; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem;">🏠</span>
+                        <span style="width: 6px; height: 20px; background: #C2410C; border-radius: 2px;"></span>
                         Commuter vs Residential Students
                     </h3>
                     <p style="color: #424242; margin-bottom: var(--spacing-lg); font-size: 0.85rem;">Housing status breakdown by program year</p>
@@ -5178,7 +5181,7 @@
                             <div style="height: 12px; background: #F8FAFC; border-radius: 6px; overflow: hidden;">
                                 <div style="width: 97.8%; height: 100%; background: #166534; border-radius: 6px;"></div>
                             </div>
-                            <div style="font-size: 0.75rem; color: #666; margin-top: 6px; text-align: center;">97.8% Residential | 2.2% Commuter</div>
+                            <div style="font-size: 0.75rem; color: #4B5563; margin-top: 6px; text-align: center;">97.8% Residential | 2.2% Commuter</div>
                         </div>
                         
                         <!-- Year 2 -->
@@ -5200,7 +5203,7 @@
                             <div style="height: 12px; background: #FFFBF5; border-radius: 6px; overflow: hidden;">
                                 <div style="width: 98.3%; height: 100%; background: #C2410C; border-radius: 6px;"></div>
                             </div>
-                            <div style="font-size: 0.75rem; color: #666; margin-top: 6px; text-align: center;">1.7% Residential | 98.3% Commuter</div>
+                            <div style="font-size: 0.75rem; color: #4B5563; margin-top: 6px; text-align: center;">1.7% Residential | 98.3% Commuter</div>
                         </div>
                     </div>
                     
@@ -5239,14 +5242,14 @@
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: var(--spacing-md);">
-                            <span style="width: 24px; font-weight: bold; color: #1D4ED8;">3</span>
+                            <span style="width: 24px; font-weight: bold; color: #1E40AF;">3</span>
                             <div style="flex: 1;">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
                                     <span style="font-size: 0.9rem;">Digital Literacy Champion Foundation</span>
                                     <span style="font-weight: 600;">86</span>
                                 </div>
                                 <div style="height: 8px; background: var(--iit-gray-light); border-radius: 4px;">
-                                    <div style="width: 92%; height: 100%; background: #1D4ED8; border-radius: 4px;"></div>
+                                    <div style="width: 92%; height: 100%; background: #1E40AF; border-radius: 4px;"></div>
                                 </div>
                             </div>
                         </div>
@@ -5298,10 +5301,10 @@
                         <div>
                             <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
                                 <span style="font-weight: 500;">NACE Competencies</span>
-                                <span style="font-weight: 600; color: #1D4ED8;">92%</span>
+                                <span style="font-weight: 600; color: #1E40AF;">92%</span>
                             </div>
                             <div style="height: 20px; background: var(--iit-gray-light); border-radius: 6px; overflow: hidden;">
-                                <div style="width: 92%; height: 100%; background: linear-gradient(90deg, #2196F3, #1D4ED8); border-radius: 6px;"></div>
+                                <div style="width: 92%; height: 100%; background: linear-gradient(90deg, #2196F3, #1E40AF); border-radius: 6px;"></div>
                             </div>
                         </div>
                         <div>
@@ -5333,7 +5336,7 @@
                     <div style="display: flex; align-items: center; gap: var(--spacing-xl);">
                         <svg viewBox="0 0 200 200" style="width: 160px; height: 160px;">
                             <!-- Critical Thinking - 22% -->
-                            <circle cx="100" cy="100" r="80" fill="none" stroke="#1D4ED8" stroke-width="30" stroke-dasharray="110.5 391.5" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#1E40AF" stroke-width="30" stroke-dasharray="110.5 391.5" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
                             <!-- Leadership - 19% -->
                             <circle cx="100" cy="100" r="80" fill="none" stroke="#6B21A8" stroke-width="30" stroke-dasharray="95.5 406.5" stroke-dashoffset="-110.5" transform="rotate(-90 100 100)"/>
                             <!-- Digital Literacy - 20% -->
@@ -5352,7 +5355,7 @@
                         
                         <div style="display: flex; flex-direction: column; gap: var(--spacing-sm); font-size: 0.85rem;">
                             <div style="display: flex; align-items: center; gap: 8px;">
-                                <span style="width: 12px; height: 12px; background: #1D4ED8; border-radius: 2px;"></span>
+                                <span style="width: 12px; height: 12px; background: #1E40AF; border-radius: 2px;"></span>
                                 <span>Critical Thinking (22%)</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 8px;">
@@ -5456,11 +5459,11 @@
                             <span style="font-weight: 600; color: #6B21A8;">7 badges earned</span>
                         </div>
                         
-                        <div style="width: 180px; height: 40px; background: linear-gradient(180deg, #1D4ED8, #1E40AF); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
+                        <div style="width: 180px; height: 40px; background: linear-gradient(180deg, #1E40AF, #1E40AF); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
                             Level 3
                         </div>
                         <div style="text-align: center; margin-bottom: var(--spacing-sm);">
-                            <span style="font-weight: 600; color: #1D4ED8;">56 badges earned</span>
+                            <span style="font-weight: 600; color: #1E40AF;">56 badges earned</span>
                         </div>
                         
                         <div style="width: 240px; height: 40px; background: linear-gradient(180deg, #166534, #1B5E20); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem;">
@@ -5502,7 +5505,7 @@
                                 <tr style="border-bottom: 1px solid var(--iit-gray-medium);">
                                     <td style="padding: 12px; font-weight: 600;">🧠Critical Thinking</td>
                                     <td style="padding: 12px; text-align: center;">7</td>
-                                    <td style="padding: 12px; text-align: center; font-weight: 600; color: #1D4ED8;">166</td>
+                                    <td style="padding: 12px; text-align: center; font-weight: 600; color: #1E40AF;">166</td>
                                     <td style="padding: 12px; text-align: center;">23%</td>
                                     <td style="padding: 12px;">Foundational (86)</td>
                                 </tr>
@@ -5626,38 +5629,38 @@
                         <div class="comparison-card">
                             <div class="comparison-header">November 5, 2025</div>
                             <div class="comparison-row">
-                                <span>Year 1</span>
+                                <span style="color: #374151;">Year 1</span>
                                 <span class="comparison-value">202</span>
                             </div>
                             <div class="comparison-row">
-                                <span>Year 2</span>
+                                <span style="color: #374151;">Year 2</span>
                                 <span class="comparison-value">90</span>
                             </div>
                             <div class="comparison-row">
-                                <span>Total</span>
+                                <span style="color: #374151;">Total</span>
                                 <span class="comparison-value">292</span>
                             </div>
                             <div class="comparison-row">
-                                <span>Check-Ins</span>
+                                <span style="color: #374151;">Check-Ins</span>
                                 <span class="comparison-value">159</span>
                             </div>
                         </div>
                         <div class="comparison-card highlight">
                             <div class="comparison-header">January 2026</div>
                             <div class="comparison-row">
-                                <span>Year 1</span>
+                                <span style="color: #374151;">Year 1</span>
                                 <span class="comparison-value">276<span class="growth-badge">+74</span></span>
                             </div>
                             <div class="comparison-row">
-                                <span>Year 2</span>
+                                <span style="color: #374151;">Year 2</span>
                                 <span class="comparison-value">120<span class="growth-badge">+30</span></span>
                             </div>
                             <div class="comparison-row">
-                                <span>Total</span>
+                                <span style="color: #374151;">Total</span>
                                 <span class="comparison-value">396<span class="growth-badge">+104</span></span>
                             </div>
                             <div class="comparison-row">
-                                <span>Check-Ins</span>
+                                <span style="color: #374151;">Check-Ins</span>
                                 <span class="comparison-value">242<span class="growth-badge">+83</span></span>
                             </div>
                         </div>
@@ -5685,33 +5688,33 @@
                             <div class="comparison-card" style="background: #F8FAFC;">
                                 <div class="comparison-header" style="color: #1E40AF;">Year 1</div>
                                 <div class="comparison-row">
-                                    <span>International</span>
+                                    <span style="color: #374151;">International</span>
                                     <span class="comparison-value" style="color: #1E40AF;">27</span>
                                 </div>
                                 <div class="comparison-row">
-                                    <span>% of Year 1</span>
+                                    <span style="color: #374151;">% of Year 1</span>
                                     <span class="comparison-value" style="color: #1E40AF;">9.8%</span>
                                 </div>
                             </div>
                             <div class="comparison-card" style="background: #F8FAFC;">
                                 <div class="comparison-header" style="color: #1E40AF;">Year 2</div>
                                 <div class="comparison-row">
-                                    <span>International</span>
+                                    <span style="color: #374151;">International</span>
                                     <span class="comparison-value" style="color: #1E40AF;">14</span>
                                 </div>
                                 <div class="comparison-row">
-                                    <span>% of Year 2</span>
+                                    <span style="color: #374151;">% of Year 2</span>
                                     <span class="comparison-value" style="color: #1E40AF;">11.7%</span>
                                 </div>
                             </div>
                             <div class="comparison-card highlight" style="background: #EFF6FF;">
                                 <div class="comparison-header" style="color: #0D47A1;">Total</div>
                                 <div class="comparison-row">
-                                    <span>International</span>
+                                    <span style="color: #374151;">International</span>
                                     <span class="comparison-value" style="color: #0D47A1; font-size: 1.3rem;">41</span>
                                 </div>
                                 <div class="comparison-row">
-                                    <span>% of Program</span>
+                                    <span style="color: #374151;">% of Program</span>
                                     <span class="comparison-value" style="color: #0D47A1;">~10%</span>
                                 </div>
                             </div>
@@ -5728,33 +5731,33 @@
                             <div class="comparison-card" style="background: #F8FAFC;">
                                 <div class="comparison-header" style="color: #166534;">Year 1 (276)</div>
                                 <div class="comparison-row">
-                                    <span>Residential</span>
+                                    <span style="color: #374151;">Residential</span>
                                     <span class="comparison-value" style="color: #166534;">270 (97.8%)</span>
                                 </div>
                                 <div class="comparison-row">
-                                    <span>Commuter</span>
+                                    <span style="color: #374151;">Commuter</span>
                                     <span class="comparison-value" style="color: #C2410C;">6 (2.2%)</span>
                                 </div>
                             </div>
                             <div class="comparison-card" style="background: #FFFBF5;">
                                 <div class="comparison-header" style="color: #C2410C;">Year 2 (120)</div>
                                 <div class="comparison-row">
-                                    <span>Residential</span>
+                                    <span style="color: #374151;">Residential</span>
                                     <span class="comparison-value" style="color: #166534;">2 (1.7%)</span>
                                 </div>
                                 <div class="comparison-row">
-                                    <span>Commuter</span>
+                                    <span style="color: #374151;">Commuter</span>
                                     <span class="comparison-value" style="color: #C2410C;">118 (98.3%)</span>
                                 </div>
                             </div>
                             <div class="comparison-card highlight" style="background: #FEF2F2;">
-                                <div class="comparison-header" style="color: #BF360C;">Total (396)</div>
+                                <div class="comparison-header" style="color: #C2410C;">Total (396)</div>
                                 <div class="comparison-row">
-                                    <span>Residential</span>
+                                    <span style="color: #374151;">Residential</span>
                                     <span class="comparison-value" style="color: #166534;">272 (68.7%)</span>
                                 </div>
                                 <div class="comparison-row">
-                                    <span>Commuter</span>
+                                    <span style="color: #374151;">Commuter</span>
                                     <span class="comparison-value" style="color: #C2410C;">124 (31.3%)</span>
                                 </div>
                             </div>
